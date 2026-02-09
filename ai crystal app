@@ -17,7 +17,7 @@
 /* Reset */
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:var(--white);color:var(--indigo);line-height:1.6;}
-a{text-decoration:none;color:inherit;}
+a{text-decoration:none;color:inherit;scroll-behavior:smooth;}
 
 /* Header */
 header{
@@ -44,15 +44,16 @@ header img{width:60px;height:60px;animation:spin 10s linear infinite;}
 /* Hero */
 .hero{
   display:flex;
-  flex-wrap:wrap;
-  justify-content:space-between;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
   padding:120px 32px;
   background:linear-gradient(135deg,var(--indigo),var(--gold));
   color:white;
+  text-align:center;
 }
-.hero-text{max-width:650px;}
-.hero-text h2{font-size:3.5rem;font-weight:900;margin-bottom:24px;line-height:1.1;}
-.hero-text p{font-size:1.25rem;margin-bottom:36px;}
+.hero h2{font-size:3.5rem;font-weight:900;margin-bottom:24px;line-height:1.1;}
+.hero p{font-size:1.25rem;margin-bottom:36px;}
 .btn{padding:16px 32px;border-radius:16px;font-weight:700;color:white;background:var(--pink);border:none;cursor:pointer;margin-right:12px;transition:all .25s;}
 .btn:hover{transform:translateY(-2px);}
 .btn-outline{background:transparent;color:white;border:2px solid var(--gold);}
@@ -81,7 +82,8 @@ header img{width:60px;height:60px;animation:spin 10s linear infinite;}
 footer{padding:32px;text-align:center;background:var(--indigo);color:white;}
 footer a{color:var(--pink);}
 
-@media(max-width:800px){.hero{flex-direction:column;align-items:center;text-align:center;}.hero-text h2{font-size:2.5rem;}}
+/* Responsive */
+@media(max-width:800px){.hero{flex-direction:column;align-items:center;text-align:center;}.hero h2{font-size:2.5rem;}}
 </style>
 </head>
 <body>
@@ -90,30 +92,61 @@ footer a{color:var(--pink);}
   <h1>Colorgy ✦ AI Crystal ID</h1>
   <img src="https://i.imgur.com/5Q1hZ8k.png" alt="Goldene Apfel mit Diamant">
   <nav>
-    <a href="index.html">Home</a>
-    <a href="features.html">Features</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="crystals.html">Crystals</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="hero-text">
-    <h2>Discover, Scan & Understand Crystals Instantly</h2>
-    <p>Colorgy AI recognizes crystals using advanced vision, explains their energetic meaning, and lets you build your personal crystal profile.</p>
-    <div class="counter" id="scanCounter">Scans today: 0 / 3</div>
-    <div class="counter highlight" id="luckyCounter">Lucky 100th Pro: 0 / 100</div>
-    <button class="btn" id="freeScanBtn">Start Free Scan</button>
-    <a class="btn-outline" href="pricing.html">View Plans</a>
-  </div>
+<!-- Hero -->
+<section id="home" class="hero">
+  <h2>Discover, Scan & Understand Crystals Instantly</h2>
+  <p>Colorgy AI recognizes crystals using advanced vision, explains their energetic meaning, and lets you build your personal crystal profile.</p>
+  <div class="counter" id="scanCounter">Scans today: 0 / 3</div>
+  <div class="counter highlight" id="luckyCounter">Lucky 100th Pro: 0 / 100</div>
+  <button class="btn" id="freeScanBtn">Start Free Scan</button>
+  <a class="btn-outline" href="#pricing">View Plans</a>
 </section>
 
-<section class="grid" id="features">
+<!-- Features -->
+<section id="features" class="grid">
   <div class="card"><h3>Free Scan</h3><p>3 scans/day · 7 days free trial</p></div>
   <div class="card"><h3>Pro Intelligence</h3><p>Advanced energetic interpretation and guidance</p></div>
   <div class="card"><h3>Collector Profile</h3><p>Save, track and manage your personal crystal collection</p></div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" class="grid">
+  <div class="card">
+    <h3>Free</h3>
+    <div class="price">0$</div>
+    <p>3 scans per day</p>
+    <button onclick="window.location.href='https://buy.stripe.com/test_free'">Start Free</button>
+  </div>
+  <div class="card">
+    <h3>Pro</h3>
+    <div class="price">$4.99</div>
+    <p>Unlimited scans + full interpretation</p>
+    <button onclick="window.location.href='https://buy.stripe.com/test_pro'">Subscribe</button>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="grid">
+  <div class="card">
+    <h3>About Colorgy</h3>
+    <p>AI powered crystal recognition and energetic interpretation system. Enhance your mind, body & spirit.</p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="grid">
+  <div class="card">
+    <h3>Contact</h3>
+    <p>Email: support@colorgy.app</p>
+  </div>
 </section>
 
 <!-- Overlay -->
@@ -147,7 +180,7 @@ function updateCounters(){
 
 freeScanBtn.addEventListener("click", () => {
   if(scansToday >= 3){
-    window.location.href="https://buy.stripe.com/cNi5kDcnw3aR6is3JT8Vi03";
+    window.location.href="https://buy.stripe.com/test_pro";
     return;
   }
   scansToday++;
