@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Colorgy AI Crystal ID</title>
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" href="image/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -17,8 +17,9 @@
 
 /* Reset */
 *{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;}
 body{font-family:'Inter',sans-serif;background:var(--white);color:var(--indigo);line-height:1.6;}
-a{text-decoration:none;color:inherit;scroll-behavior:smooth;}
+a{text-decoration:none;color:inherit;}
 
 /* Header */
 header{
@@ -84,14 +85,19 @@ footer{padding:32px;text-align:center;background:var(--indigo);color:white;}
 footer a{color:var(--pink);}
 
 /* Responsive */
-@media(max-width:800px){.hero{flex-direction:column;align-items:center;text-align:center;}.hero h2{font-size:2.5rem;}}
+@media(max-width:800px){
+  .hero h2{font-size:2.5rem;}
+  header{flex-direction:column;gap:12px;}
+  nav{display:flex;flex-wrap:wrap;justify-content:center;}
+  nav a{margin:8px 12px;}
+}
 </style>
 </head>
 <body>
 
 <header>
   <h1>Colorgy ✦ AI Crystal ID</h1>
-  <img src="ai-colorgy-crystal-identifier-app.2.pic.png" alt="Goldene Apfel mit Diamant">
+  <img src="image/logo.png" alt="Logo">
   <nav>
     <a href="#home">Home</a>
     <a href="#features">Features</a>
@@ -101,7 +107,6 @@ footer a{color:var(--pink);}
   </nav>
 </header>
 
-<!-- Hero -->
 <section id="home" class="hero">
   <h2>Discover, Scan & Understand Crystals Instantly</h2>
   <p>Colorgy AI recognizes crystals using advanced vision, explains their energetic meaning, and lets you build your personal crystal profile.</p>
@@ -111,31 +116,27 @@ footer a{color:var(--pink);}
   <a class="btn-outline" href="#pricing">View Plans</a>
 </section>
 
-<!-- Features -->
 <section id="features" class="grid">
   <div class="card"><h3>Free Scan</h3><p>3 scans/day · 7 days free trial</p></div>
   <div class="card"><h3>Pro Intelligence</h3><p>Advanced energetic interpretation and guidance</p></div>
   <div class="card"><h3>Collector Profile</h3><p>Save, track and manage your personal crystal collection</p></div>
 </section>
 
-<!-- Pricing -->
 <section id="pricing" class="grid">
   <div class="card">
     <h3>Free</h3>
     <div class="price">0$</div>
     <p>3 scans per day</p>
-    <button onclick="window.location.href='https://buy.stripe.com/test_free'">Start Free</button>
+    <button onclick="window.location.href='https://buy.stripe.com/YOUR_FREE_LINK'">Start Free</button>
   </div>
   <div class="card">
     <h3>Pro</h3>
     <div class="price">$4.99</div>
     <p>Unlimited scans + full interpretation</p>
-    <button onclick="window.location.href='https://buy.stripe.com/cNi5kDcnw3aR6is3JT8Vi03
-">Subscribe</button>
+    <button onclick="window.location.href='https://buy.stripe.com/YOUR_PRO_LINK'">Subscribe</button>
   </div>
 </section>
 
-<!-- About -->
 <section id="about" class="grid">
   <div class="card">
     <h3>About Colorgy</h3>
@@ -143,7 +144,6 @@ footer a{color:var(--pink);}
   </div>
 </section>
 
-<!-- Contact -->
 <section id="contact" class="grid">
   <div class="card">
     <h3>Contact</h3>
@@ -151,10 +151,9 @@ footer a{color:var(--pink);}
   </div>
 </section>
 
-<!-- Overlay -->
 <div class="overlay" id="overlay">
   <div class="overlay-content">
-    <img src="https://images.unsplash.com/photo-1567225477277-c8162eb4991d?w=400&h=400&fit=crop" alt="Crystal">
+    <img src="image/crystal.png" alt="Crystal">
     <h3 id="stoneName">Amethyst</h3>
     <p id="stoneMeta">Crown Chakra · Calming · Intuition</p>
     <p id="stoneDesc">Enhances clarity of mind, emotional balance, and spiritual awareness.</p>
@@ -182,7 +181,7 @@ function updateCounters(){
 
 freeScanBtn.addEventListener("click", () => {
   if(scansToday >= 3){
-    window.location.href="https://buy.stripe.com/test_pro";
+    window.location.href="https://buy.stripe.com/YOUR_PRO_LINK";
     return;
   }
   scansToday++;
