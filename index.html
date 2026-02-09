@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Colorgy AI Crystal ID</title>
-<link rel="icon" href="image/favicon.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -13,15 +12,12 @@
   --gold:#c9a24d;
   --pink:#ff79b0;
   --shadow:0 12px 38px rgba(0,0,0,.3);
-  --hero-gradient: linear-gradient(135deg,var(--indigo),var(--gold));
 }
-/* Reset */
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:var(--white);color:var(--indigo);line-height:1.6;}
-a{text-decoration:none;color:inherit;}
 
-/* Header */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--indigo);line-height:1.6;}
+a{text-decoration:none;color:inherit;scroll-behavior:smooth;}
+
 header{
   background:var(--indigo);
   color:var(--white);
@@ -34,99 +30,65 @@ header{
   z-index:100;
 }
 header h1{
-  font-size:3.2rem;
+  font-size:4rem;
   font-weight:900;
   letter-spacing:1px;
 }
-nav a{margin-left:24px;font-weight:600;color:white;transition:color .2s;}
-nav a:hover{color:var(--gold);}
-header img{
-  width:80px;
-  height:80px;
-  border-radius:50%;
-  border:3px solid var(--gold);
-  animation:spin 15s linear infinite;
-}
-@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+nav a{margin-left:24px;font-weight:700;color:white;}
+nav a:hover{text-decoration:underline;}
+header img{width:80px;height:80px;}
 
-/* Hero */
 .hero{
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
   padding:140px 32px;
-  background:var(--hero-gradient);
+  background:linear-gradient(135deg,var(--indigo),var(--gold));
   color:white;
   text-align:center;
 }
-.hero h2{
-  font-size:4rem;
-  font-weight:900;
-  margin-bottom:24px;
-  line-height:1.1;
-  text-shadow:2px 2px 8px rgba(0,0,0,0.3);
-}
-.hero p{
-  font-size:1.35rem;
-  margin-bottom:36px;
-  max-width:700px;
-}
-.btn{padding:18px 36px;border-radius:16px;font-weight:700;color:white;background:var(--pink);border:none;cursor:pointer;margin-right:12px;transition:all .25s;}
+.hero h2{font-size:4rem;font-weight:900;margin-bottom:24px;line-height:1.1;}
+.hero p{font-size:1.5rem;margin-bottom:36px;}
+.btn{padding:16px 32px;border-radius:16px;font-weight:700;color:white;background:var(--pink);border:none;cursor:pointer;margin-right:12px;transition:all .25s;}
 .btn:hover{transform:translateY(-2px);}
-.btn-outline{background:transparent;color:white;border:2px solid var(--gold);transition:all .25s;}
-.btn-outline:hover{background:var(--gold);color:var(--indigo);}
+.btn-outline{background:transparent;color:white;border:2px solid var(--gold);}
 
-/* Counters */
-.counter{margin:20px 0;font-size:1.25rem;font-weight:700;}
+.counter{margin:20px 0;font-size:2rem;font-weight:800;}
 .counter.highlight{color:var(--gold);animation:flash 1s infinite alternate;}
 @keyframes flash{from{opacity:1;}to{opacity:.3;}}
 
-/* Grid */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;padding:60px 32px;}
-.card{background:white;color:var(--indigo);padding:28px;border-radius:20px;box-shadow:var(--shadow);text-align:center;}
-.card h3{font-size:1.6rem;margin-bottom:14px;}
-.card .price{font-size:2.2rem;font-weight:800;color:var(--gold);margin-bottom:12px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;padding:40px 32px;}
+.card{background:white;color:var(--indigo);padding:24px;border-radius:20px;box-shadow:var(--shadow);cursor:pointer;}
+.card h3{font-size:1.8rem;margin-bottom:12px;}
+.card .price{font-size:2rem;font-weight:800;color:var(--gold);margin-bottom:12px;}
+.card img{width:100%;border-radius:12px;margin-bottom:12px;}
 
-/* Overlay */
 .overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,14,46,0.95);display:none;justify-content:center;align-items:center;z-index:200;}
 .overlay.active{display:flex;}
-.overlay-content{background:white;color:var(--indigo);padding:36px;border-radius:20px;max-width:520px;text-align:center;animation:fadeIn 0.5s ease;}
-.overlay-content img{width:140px;height:140px;margin-bottom:18px;border-radius:16px;}
+.overlay-content{background:white;color:var(--indigo);padding:32px;border-radius:20px;max-width:500px;text-align:center;}
+.overlay-content img{width:140px;height:140px;margin-bottom:16px;object-fit:cover;}
 .overlay-content a{color:var(--pink);font-weight:700;}
-.overlay-content button{margin-top:18px;padding:14px 28px;border:none;border-radius:12px;background:var(--gold);color:var(--indigo);cursor:pointer;transition:all .2s;}
-.overlay-content button:hover{transform:translateY(-2px);}
-@keyframes fadeIn{from{opacity:0;transform:scale(0.9);}to{opacity:1;transform:scale(1);}}
+.overlay-content button{margin-top:16px;padding:12px 24px;border:none;border-radius:12px;background:var(--gold);color:var(--indigo);cursor:pointer;}
 
-/* Footer */
-footer{padding:36px;text-align:center;background:var(--indigo);color:white;}
-footer a{color:var(--pink);font-weight:700;}
+footer{padding:32px;text-align:center;background:var(--indigo);color:white;}
+footer a{color:var(--pink);}
 
-/* Responsive */
-@media(max-width:900px){
-  .hero h2{font-size:2.8rem;}
-  header{flex-direction:column;gap:12px;}
-  nav{display:flex;flex-wrap:wrap;justify-content:center;}
-  nav a{margin:8px 12px;}
-}
-@media(max-width:600px){
-  .hero h2{font-size:2.2rem;}
-  .hero p{font-size:1.1rem;}
-}
+@media(max-width:800px){.hero h2{font-size:3rem;}}
 </style>
 </head>
 <body>
 
 <header>
+  <img src="https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/ai-colorgy-crystal-identifier-app.0.pic.png" alt="Colorgy Logo">
   <h1>Colorgy ✦ AI Crystal ID</h1>
-  <img src="image/logo.png" alt="Colorgy Logo">
   <nav>
-    <a href="index.html">Home</a>
-    <a href="features.html">Features</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="crystals.html">Crystals</a>
-    <a href="about.html">About</a>
-    <a href="profile.html">Profile</a>
+    <a href="#home">Home</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#profile">Profile</a>
+    <a href="#crystals">Crystals</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
@@ -136,7 +98,7 @@ footer a{color:var(--pink);font-weight:700;}
   <div class="counter" id="scanCounter">Scans today: 0 / 3</div>
   <div class="counter highlight" id="luckyCounter">Lucky 100th Pro: 0 / 100</div>
   <button class="btn" id="freeScanBtn">Start Free Scan</button>
-  <a class="btn-outline" href="pricing.html">View Plans</a>
+  <a class="btn-outline" href="#pricing">View Plans</a>
 </section>
 
 <section id="features" class="grid">
@@ -147,38 +109,55 @@ footer a{color:var(--pink);font-weight:700;}
 
 <section id="pricing" class="grid">
   <div class="card">
-    <h3>Free</h3>
+    <h3>Freemium</h3>
     <div class="price">$0</div>
     <p>3 scans per day</p>
     <button onclick="window.location.href='https://buy.stripe.com/test_free'">Start Free</button>
   </div>
   <div class="card">
-    <h3>Pro</h3>
+    <h3>Pro (3 Months)</h3>
     <div class="price">$6.99</div>
-    <p>3 months, unlimited scans + full interpretation</p>
+    <p>Unlimited scans + full interpretation</p>
     <button onclick="window.location.href='https://buy.stripe.com/test_pro3'">Subscribe</button>
   </div>
   <div class="card">
-    <h3>Premium</h3>
+    <h3>Premium (1 Year)</h3>
     <div class="price">$69.99</div>
-    <p>1 year, unlimited scans + full interpretation</p>
+    <p>Unlimited scans + full interpretation + bonus content</p>
     <button onclick="window.location.href='https://buy.stripe.com/test_pro12'">Subscribe</button>
   </div>
 </section>
 
+<section id="profile" class="grid">
+  <div class="card">
+    <h3>Your Crystal Profile</h3>
+    <p>Save your scanned crystals, track energy patterns, and manage your collection.</p>
+  </div>
+</section>
+
 <section id="crystals" class="grid">
-  <div class="card" onclick="showOverlay('Amethyst','Crown Chakra · Calming · Intuition','Enhances clarity of mind, emotional balance, and spiritual awareness.','amethyst.png','https://www.mineralienatlas.de/lexikon/index.php/Amethyst')">
-    <h3>Amethyst</h3>
-    <img src="image/amethyst.png" alt="Amethyst" style="width:100%;border-radius:16px;">
+  <!-- Alle Edelsteine aus deinem Repo hier -->
+  <div class="card" onclick="showOverlay('Achat / Agate','Healing · Grounding','Balances energies and strengthens memory','Achat-Agate.jpg','https://www.mineralienatlas.de/lexikon/index.php/Achat')">
+    <h3>Achat / Agate</h3>
+    <img src="https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Achat-Agate.jpg" alt="Achat / Agate">
   </div>
-  <div class="card" onclick="showOverlay('Rose Quartz','Heart Chakra · Love · Harmony','Brings love, harmony and emotional healing.','rosequartz.png','https://www.mineralienatlas.de/lexikon/index.php/Rosenquarz')">
-    <h3>Rose Quartz</h3>
-    <img src="image/rosequartz.png" alt="Rose Quartz" style="width:100%;border-radius:16px;">
+  <div class="card" onclick="showOverlay('Bergkristall / Rock Crystal','Clarity · Energy','Amplifies energy, enhances focus','Bergkristall-Rock-Crystal.jpg','https://www.mineralienatlas.de/lexikon/index.php/Bergkristall')">
+    <h3>Bergkristall / Rock Crystal</h3>
+    <img src="https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Bergkristall-Rock-Crystal.jpg" alt="Bergkristall / Rock Crystal">
   </div>
-  <div class="card" onclick="showOverlay('Citrine','Solar Plexus · Confidence · Energy','Boosts confidence and personal power.','citrine.png','https://www.mineralienatlas.de/lexikon/index.php/Citrin')">
-    <h3>Citrine</h3>
-    <img src="image/citrine.png" alt="Citrine" style="width:100%;border-radius:16px;">
+  <div class="card" onclick="showOverlay('Diamant / Diamond','Strength · Purity','Symbolizes strength and eternal love','Diamant-Diamond.jpg','https://www.mineralienatlas.de/lexikon/index.php/Diamant')">
+    <h3>Diamant / Diamond</h3>
+    <img src="https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Diamant-Diamond.jpg" alt="Diamant / Diamond">
   </div>
+  <div class="card" onclick="showOverlay('Diamantgruppe','Cluster · Strength','Beautiful diamond cluster','Diamantgruppe.jpg','https://www.mineralienatlas.de/index.php?action=lexSearch')">
+    <h3>Diamantgruppe</h3>
+    <img src="https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Diamantgruppe.jpg" alt="Diamantgruppe">
+  </div>
+  <div class="card" onclick="showOverlay('Edelopal / Opal','Creativity · Luck','Brings creativity and joy','Edelopal-Opal.jpg','https://www.mineralienatlas.de/index.php?action=lexSearch')">
+    <h3>Edelopal / Opal</h3>
+    <img src="https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Edelopal-Opal.jpg" alt="Edelopal / Opal">
+  </div>
+  <!-- Füge alle weiteren Steine hier analog ein -->
 </section>
 
 <section id="about" class="grid">
@@ -188,19 +167,19 @@ footer a{color:var(--pink);font-weight:700;}
   </div>
 </section>
 
-<section id="profile" class="grid">
+<section id="contact" class="grid">
   <div class="card">
-    <h3>Your Profile</h3>
-    <p>Track your scans, saved crystals, and upgrade your membership.</p>
+    <h3>Contact</h3>
+    <p>Email: support@colorgy.app</p>
   </div>
 </section>
 
 <div class="overlay" id="overlay">
   <div class="overlay-content">
     <img id="overlayImg" src="" alt="Crystal">
-    <h3 id="stoneName">Amethyst</h3>
-    <p id="stoneMeta">Crown Chakra · Calming · Intuition</p>
-    <p id="stoneDesc">Enhances clarity of mind, emotional balance, and spiritual awareness.</p>
+    <h3 id="stoneName"></h3>
+    <p id="stoneMeta"></p>
+    <p id="stoneDesc"></p>
     <a id="stoneLink" href="#" target="_blank">Learn more</a>
     <button id="closeOverlay">Close</button>
   </div>
@@ -212,47 +191,49 @@ footer a{color:var(--pink);font-weight:700;}
 
 <script>
 let scansToday = 0;
-let luckyCount = parseInt(localStorage.getItem("luckyCount")||"0");
-const scanCounter=document.getElementById("scanCounter");
-const luckyCounter=document.getElementById("luckyCounter");
-const overlay=document.getElementById("overlay");
-const freeScanBtn=document.getElementById("freeScanBtn");
+let luckyCount = parseInt(localStorage.getItem("luckyCount") || "0");
+const scanCounter = document.getElementById("scanCounter");
+const luckyCounter = document.getElementById("luckyCounter");
+const overlay = document.getElementById("overlay");
+const freeScanBtn = document.getElementById("freeScanBtn");
 
 function updateCounters(){
-  scanCounter.textContent=`Scans today: ${scansToday} / 3`;
-  luckyCounter.textContent=`Lucky 100th Pro: ${luckyCount % 100} / 100`;
+  scanCounter.textContent = `Scans today: ${scansToday} / 3`;
+  luckyCounter.textContent = `Lucky 100th Pro: ${luckyCount % 100} / 100`;
 }
 
-freeScanBtn.addEventListener("click",()=>{
-  if(scansToday>=3){
+function showOverlay(name, meta, desc, imgFile, link){
+  document.getElementById("stoneName").textContent = name;
+  document.getElementById("stoneMeta").textContent = meta;
+  document.getElementById("stoneDesc").textContent = desc;
+  document.getElementById("overlayImg").src = `https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/${imgFile}`;
+  document.getElementById("stoneLink").href = link;
+  overlay.classList.add("active");
+}
+
+freeScanBtn.addEventListener("click", () => {
+  if(scansToday >= 3){
     window.location.href="https://buy.stripe.com/test_pro3";
     return;
   }
   scansToday++;
   luckyCount++;
-  localStorage.setItem("luckyCount",luckyCount);
+  localStorage.setItem("luckyCount", luckyCount);
   updateCounters();
-  showOverlay("Amethyst","Crown Chakra · Calming · Intuition","Enhances clarity of mind, emotional balance, and spiritual awareness.","amethyst.png","https://www.mineralienatlas.de/lexikon/index.php/Amethyst");
-  if(luckyCount%100===0){
+
+  // Beispiel Overlay: Amethyst
+  showOverlay('Amethyst','Crown Chakra · Calming · Intuition','Enhances clarity of mind, emotional balance, and spiritual awareness.','Quartz-Var-Amethyst-Amethyst.jpg','https://www.mineralienatlas.de/lexikon/index.php/Amethyst');
+
+  if(luckyCount % 100 === 0){
     alert("🎉 Congrats! You are the 100th Pro user. 1 month free unlocked!");
   }
 });
 
-document.getElementById("closeOverlay").addEventListener("click",()=>{
+document.getElementById("closeOverlay").addEventListener("click", ()=>{
   overlay.classList.remove("active");
 });
 
-function showOverlay(name,meta,desc,img,link){
-  document.getElementById("stoneName").textContent=name;
-  document.getElementById("stoneMeta").textContent=meta;
-  document.getElementById("stoneDesc").textContent=desc;
-  document.getElementById("overlayImg").src="image/"+img;
-  document.getElementById("stoneLink").href=link;
-  overlay.classList.add("active");
-}
-
 updateCounters();
 </script>
-
 </body>
 </html>
