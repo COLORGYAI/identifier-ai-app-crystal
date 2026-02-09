@@ -90,7 +90,7 @@ footer a{color:var(--pink);}
 
 <header>
   <h1>Colorgy ✦ AI Crystal ID</h1>
-  <img src="https://i.imgur.com/5Q1hZ8k.png" alt="Goldene Apfel mit Diamant">
+  <img src="ai-colorgy-crystal-identifier-app.2.pic.png" alt="Goldene Apfel mit Diamant">
   <nav>
     <a href="#home">Home</a>
     <a href="#features">Features</a>
@@ -129,7 +129,8 @@ footer a{color:var(--pink);}
     <h3>Pro</h3>
     <div class="price">$4.99</div>
     <p>Unlimited scans + full interpretation</p>
-    <button onclick="window.location.href='https://buy.stripe.com/test_pro'">Subscribe</button>
+    <button onclick="window.location.href='https://buy.stripe.com/cNi5kDcnw3aR6is3JT8Vi03
+">Subscribe</button>
   </div>
 </section>
 
