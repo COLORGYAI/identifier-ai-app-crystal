@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Colorgy AI Crystal ID</title>
+<title>Colorgy AI <br>Crystal ID App</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -37,7 +37,7 @@ header h1{
   font-weight:900;
   letter-spacing:.5px;
 }
-nav a{margin-left:24px;font-weight:600;color:white;}
+nav a{margin-left:30px;font-weight:500;color:white;}
 nav a:hover{text-decoration:underline;}
 
 /* Hero */
@@ -53,7 +53,7 @@ nav a:hover{text-decoration:underline;}
 }
 .hero h2{font-size:2.5rem;font-weight:900;margin-bottom:20px;line-height:1.2;}
 .hero p{font-size:1.2rem;margin-bottom:30px;}
-.counter{margin:20px 0;font-size:1.5rem;font-weight:800;}
+.counter{margin:20px 0;font-size:1.7rem;font-weight:900;}
 .counter.highlight{color:var(--gold);}
 
 /* Buttons */
@@ -62,7 +62,7 @@ nav a:hover{text-decoration:underline;}
 .btn-outline{background:transparent;color:white;border:2px solid var(--gold);}
 
 /* Grid / Sections */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;padding:40px 32px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;padding:40px 32px;}
 .card{background:white;color:var(--indigo);padding:20px;border-radius:20px;box-shadow:var(--shadow);text-align:center;cursor:pointer;}
 .card h3{font-size:1.2rem;margin-bottom:10px;}
 .card .price{font-size:1.5rem;font-weight:800;color:var(--gold);margin-bottom:10px;}
@@ -79,7 +79,7 @@ nav a:hover{text-decoration:underline;}
 footer{padding:32px;text-align:center;background:var(--indigo);color:white;}
 footer a{color:var(--pink);}
 
-@media(max-width:800px){.hero h2{font-size:2rem;}.grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}}
+@media(max-width:800px){.hero h2{font-size:2rem;}.grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));}}
 </style>
 </head>
 <body>
@@ -100,7 +100,7 @@ footer a{color:var(--pink);}
 <!-- Hero -->
 <section id="home" class="hero">
   <h2>Discover & Scan Crystals Instantly</h2>
-  <p>Colorgy AI recognizes crystals, explains their meaning, ai-powered analysis · Educational & spiritual insights clearly labeled.</p>
+  <h3><p>Colorgy AI recognizes crystals, explains their meaning, ai-powered analysis.<br>Educational & spiritual insights clearly labeled.</p></h3>
   <div class="counter" id="scanCounter">Scans today: 0 / 3</div>
   <div class="counter highlight" id="luckyCounter">Lucky 100th Pro: 0 / 100</div>
   <button class="btn" id="freeScanBtn">Start Free Scan</button>
@@ -143,14 +143,28 @@ footer a{color:var(--pink);}
   </div>
 </section>
 
-<!-- Crystals -->
-<section id="crystals" class="grid" id="crystals">
-  <!-- Example one crystal card -->
+<!-- Crystals Gallery -->
+<section id="crystals" class="grid">
+  <!-- Edelsteine Karten -->
   <div class="card" onclick="showOverlay('Achat / Agate','Healing · Grounding','Balances energies and strengthens memory','https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Achat-Agate.jpg','freemium')">
-    <h3>Achat / Agate</h3>
-    <img src="https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Achat-Agate.jpg" alt="Achat / Agate">
+    <h3>Achat / Agate</h3><img src="https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Achat-Agate.jpg" alt="Achat / Agate">
   </div>
-  <!-- Weitere Edelsteine analog hinzufügen (alle Bilder von GitHub) -->
+  <div class="card" onclick="showOverlay('Bergkristall / Rock Crystal','Clarity · Energy','Boosts clarity and focus','https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Bergkristall-Rock-Crystal.jpg','freemium')">
+    <h3>Bergkristall / Rock Crystal</h3><img src="https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Bergkristall-Rock-Crystal.jpg" alt="Bergkristall">
+  </div>
+  <div class="card" onclick="showOverlay('Diamant / Diamond','Power · Purity','Strength, brilliance and clarity','https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Diamant-Diamond.jpg','pro3')">
+    <h3>Diamant / Diamond</h3><img src="https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Diamant-Diamond.jpg" alt="Diamant">
+  </div>
+  <div class="card" onclick="showOverlay('Diamantgruppe / Diamond Cluster','Group Energy','Clustered diamond energies','https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Diamantgruppe.jpg','premium')">
+    <h3>Diamantgruppe / Diamond Cluster</h3><img src="https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Diamantgruppe.jpg" alt="Diamantgruppe">
+  </div>
+  <div class="card" onclick="showOverlay('Edelopal / Opal','Healing · Creativity','Enhances inspiration','https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Edelopal-Opal.jpg','pro3')">
+    <h3>Edelopal / Opal</h3><img src="https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Edelopal-Opal.jpg" alt="Edelopal">
+  </div>
+  <div class="card" onclick="showOverlay('Eisenmeteorit / Iron Meteorite','Strength · Earth','Grounding and strength','https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Eisenmeteorit-feiner-Oktaedrit-4-A-Iron-IVA-iron-iron-group-meteorite.jpg','premium')">
+    <h3>Eisenmeteorit / Iron Meteorite</h3><img src="https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Eisenmeteorit-feiner-Oktaedrit-4-A-Iron-IVA-iron-iron-group-meteorite.jpg" alt="Eisenmeteorit">
+  </div>
+  <!-- Weitere Edelsteine analog hier einfügen (alle 19 Bilder) -->
 </section>
 
 <!-- Overlay -->
@@ -165,8 +179,8 @@ footer a{color:var(--pink);}
   </div>
 </div>
 
-<footer> © 2026 COLORGY™
-Designed for Humans · Powered by AI | All Rights Reserved | <a href="#">Impressum</a>
+<footer>
+ © 2026 COLORGY™ Designed for Humans · Powered by AI | <a href="#">Impressum</a>
 </footer>
 
 <script>
@@ -225,3 +239,4 @@ updateCounters();
 
 </body>
 </html>
+
