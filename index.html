@@ -21,52 +21,58 @@ a{text-decoration:none;color:inherit;scroll-behavior:smooth;}
 header{
   background:var(--indigo);
   color:var(--white);
-  padding:24px 32px;
+  padding:10px 22px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
   position:sticky;
   top:0;
   z-index:100;
 }
 header h1{
-  font-size:4rem;
+  font-size:2.8rem; /* kleiner, sichtbar */
   font-weight:900;
   letter-spacing:1px;
+  margin-left:12px;
 }
-nav a{margin-left:24px;font-weight:700;color:white;}
+nav a{margin-left:30px;font-weight:500;color:white;}
 nav a:hover{text-decoration:underline;}
-header img{width:80px;height:80px;}
+header img{
+  width:70px;
+  height:70px;
+  object-fit:contain;
+}
 
 .hero{
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  padding:140px 32px;
+  padding:120px 32px;
   background:linear-gradient(135deg,var(--indigo),var(--gold));
   color:white;
   text-align:center;
 }
-.hero h2{font-size:4rem;font-weight:900;margin-bottom:24px;line-height:1.1;}
-.hero p{font-size:1.5rem;margin-bottom:36px;}
-.btn{padding:16px 32px;border-radius:16px;font-weight:700;color:white;background:var(--pink);border:none;cursor:pointer;margin-right:12px;transition:all .25s;}
+.hero h2{font-size:3rem;font-weight:900;margin-bottom:20px;line-height:1.1;}
+.hero p{font-size:1.3rem;margin-bottom:30px;}
+.btn{padding:14px 28px;border-radius:14px;font-weight:700;color:white;background:var(--pink);border:none;cursor:pointer;margin-right:12px;transition:all .25s;}
 .btn:hover{transform:translateY(-2px);}
 .btn-outline{background:transparent;color:white;border:2px solid var(--gold);}
 
-.counter{margin:20px 0;font-size:2rem;font-weight:800;}
+.counter{margin:18px 0;font-size:1.8rem;font-weight:800;}
 .counter.highlight{color:var(--gold);animation:flash 1s infinite alternate;}
-@keyframes flash{from{opacity:1;}to{opacity:.3;}}
+@keyframes flash{from{opacity:1;}to{opacity:.5;}}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;padding:40px 32px;}
-.card{background:white;color:var(--indigo);padding:24px;border-radius:20px;box-shadow:var(--shadow);cursor:pointer;}
-.card h3{font-size:1.8rem;margin-bottom:12px;}
-.card .price{font-size:2rem;font-weight:800;color:var(--gold);margin-bottom:12px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;padding:36px 32px;}
+.card{background:white;color:var(--indigo);padding:20px;border-radius:16px;box-shadow:var(--shadow);cursor:pointer;transition:all .2s;}
+.card:hover{transform:translateY(-4px);}
+.card h3{font-size:1.5rem;margin-bottom:12px;}
+.card .price{font-size:1.8rem;font-weight:800;color:var(--gold);margin-bottom:12px;}
 .card img{width:100%;border-radius:12px;margin-bottom:12px;}
 
 .overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,14,46,0.95);display:none;justify-content:center;align-items:center;z-index:200;}
 .overlay.active{display:flex;}
-.overlay-content{background:white;color:var(--indigo);padding:32px;border-radius:20px;max-width:500px;text-align:center;}
+.overlay-content{background:white;color:var(--indigo);padding:28px;border-radius:20px;max-width:500px;text-align:center;}
 .overlay-content img{width:140px;height:140px;margin-bottom:16px;object-fit:cover;}
 .overlay-content a{color:var(--pink);font-weight:700;}
 .overlay-content button{margin-top:16px;padding:12px 24px;border:none;border-radius:12px;background:var(--gold);color:var(--indigo);cursor:pointer;}
@@ -74,14 +80,16 @@ header img{width:80px;height:80px;}
 footer{padding:32px;text-align:center;background:var(--indigo);color:white;}
 footer a{color:var(--pink);}
 
-@media(max-width:800px){.hero h2{font-size:3rem;}}
+@media(max-width:800px){.hero h2{font-size:2.2rem;}}
 </style>
 </head>
 <body>
 
 <header>
-  <img src="https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/ai-colorgy-crystal-identifier-app.0.pic.png" alt="Colorgy Logo">
-  <h1>Colorgy ✦ AI Crystal ID</h1>
+  <div style="display:flex;align-items:center">
+    <img src="https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/ai-colorgy-crystal-identifier-app.0.pic.png" alt="Colorgy Logo">
+    <h1>Colorgy AI <br>Crystal ID App</h1>
+  </div>
   <nav>
     <a href="#home">Home</a>
     <a href="#features">Features</a>
@@ -93,10 +101,10 @@ footer a{color:var(--pink);}
 </header>
 
 <section id="home" class="hero">
-  <h2>Discover, Scan & Understand Crystals Instantly</h2>
-  <p>Colorgy AI recognizes crystals using advanced vision, explains their energetic meaning, and lets you build your personal crystal profile.</p>
-  <div class="counter" id="scanCounter">Scans today: 0 / 3</div>
-  <div class="counter highlight" id="luckyCounter">Lucky 100th Pro: 0 / 100</div>
+  <h1>Discover, Scan & Understand Crystals Instantly</h1>
+  <h3><p>Colorgy AI recognizes crystals using advanced vision, explains their energetic meaning,<br>and lets you build your personal crystal profile.</p></h3>
+  <div class="counter" id="scanCounter"><h3>Scans today: 0 / 3</h3></div>
+  <div class="counter highlight" id="luckyCounter"><h3>Lucky 100th Pro: 0 / 100</h3></div>
   <button class="btn" id="freeScanBtn">Start Free Scan</button>
   <a class="btn-outline" href="#pricing">View Plans</a>
 </section>
@@ -111,7 +119,7 @@ footer a{color:var(--pink);}
   <div class="card">
     <h3>Freemium</h3>
     <div class="price">$0</div>
-    <p>3 scans per day</p>
+    <p>3 scans/day</p>
     <button onclick="window.location.href='https://buy.stripe.com/test_free'">Start Free</button>
   </div>
   <div class="card">
@@ -136,7 +144,7 @@ footer a{color:var(--pink);}
 </section>
 
 <section id="crystals" class="grid">
-  <!-- Alle Edelsteine aus deinem Repo hier -->
+  <!-- Alle Edelsteine aus Repo -->
   <div class="card" onclick="showOverlay('Achat / Agate','Healing · Grounding','Balances energies and strengthens memory','Achat-Agate.jpg','https://www.mineralienatlas.de/lexikon/index.php/Achat')">
     <h3>Achat / Agate</h3>
     <img src="https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Achat-Agate.jpg" alt="Achat / Agate">
@@ -157,7 +165,7 @@ footer a{color:var(--pink);}
     <h3>Edelopal / Opal</h3>
     <img src="https://raw.githubusercontent.com/COLORGYAI/identifier-ai-app-crystal/main/images/Edelopal-Opal.jpg" alt="Edelopal / Opal">
   </div>
-  <!-- Füge alle weiteren Steine hier analog ein -->
+  <!-- hier alle weiteren Edelsteine analog einfügen -->
 </section>
 
 <section id="about" class="grid">
@@ -221,7 +229,6 @@ freeScanBtn.addEventListener("click", () => {
   localStorage.setItem("luckyCount", luckyCount);
   updateCounters();
 
-  // Beispiel Overlay: Amethyst
   showOverlay('Amethyst','Crown Chakra · Calming · Intuition','Enhances clarity of mind, emotional balance, and spiritual awareness.','Quartz-Var-Amethyst-Amethyst.jpg','https://www.mineralienatlas.de/lexikon/index.php/Amethyst');
 
   if(luckyCount % 100 === 0){
