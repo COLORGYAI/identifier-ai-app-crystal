@@ -1,276 +1,277 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COLORGY AI Crystal Identifier</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>COLORGY AI — Crystal Identifier</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
 <style>
-:root{
-  --bg:#0f0f0f;       /* dunkler Hintergrund */
-  --text:#fff;         /* weißer Text */
-  --pink:#FE2C55;      /* TikTok pink */
-  --cyan:#25F4EE;      /* TikTok cyan */
-  --gold:#d4b75c;
-  --shadow:0 8px 24px rgba(0,0,0,.5);
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,sans-serif}
+
+body{
+color:white;
+background:url("images/Achat-Agate.jpg") center/cover fixed no-repeat;
 }
 
-/* Reset */
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;position:relative;}
-
-/* Crystal full-page background */
-body::before{
-  content:"";
-  position:fixed;top:0;left:0;width:100%;height:100%;
-  background-image:
-    url('images/Achat-Agate.jpg'),
-    url('images/Bergkristall-Rock-Crystal.jpg'),
-    url('images/Diamant-Diamond.jpg'),
-    url('images/Diamantgruppe.jpg'),
-    url('images/Edelopal-Opal.jpg'),
-    url('images/Eisenmeteorit-feiner-Oktaedrit-4-A-Iron-IVA-iron-iron-group-meteorite.jpg'),
-    url('images/Elbait.jpg'),
-    url('images/Gold.jpg'),
-    url('images/Kupfer-Silber-Copper-Silver.jpg'),
-    url('images/Lapis-Lazuli.jpg'),
-    url('images/Larimar-Pektolith-Atlantisstein.jpg'),
-    url('images/Larimar.jpg'),
-    url('images/Platin-Gold-Gold-Platinum.jpg'),
-    url('images/Quartz-Var-Amethyst-Amethyst.jpg'),
-    url('images/Rosenquarz-Rose-Quartz.jpg'),
-    url('images/Ruby.jpg');
-  background-size:20% 20%;
-  background-repeat:repeat;
-  opacity:0.08;
-  z-index:-1;
+.overlay{
+background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.85));
+min-height:100vh;
 }
 
-/* Header */
-header{
-  background:rgba(0,0,0,0.85);
-  color:white;
-  padding:20px 32px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:100;
+/* NAV */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:22px 60px;
 }
-header h1{
-  font-size:1.5rem;
-  font-weight:900;
-  color:var(--pink);
+
+.logo{
+font-weight:800;
+font-size:24px;
+letter-spacing:.15em;
 }
-header img{
-  width:100px;
-  height:auto;
-}
+
 nav a{
-  margin-left:20px;
-  font-weight:600;
-  font-size:0.95rem;
-  color:white;
+color:white;
+text-decoration:none;
+margin-left:28px;
+opacity:.75;
+font-weight:600;
 }
-nav a:hover{color:var(--cyan);}
 
-/* Hero */
+nav a:hover{opacity:1}
+
+/* HERO */
+
 .hero{
-  display:flex;
-  justify-content:center;
-  padding:100px 32px 60px;
+text-align:center;
+padding:120px 20px 80px;
 }
-.hero-content{
-  max-width:720px;
-  text-align:center;
-  background:rgba(15,15,15,0.85);
-  padding:40px;
-  border-radius:20px;
-  box-shadow:var(--shadow);
+
+.hero h1{
+font-size:58px;
+font-weight:800;
+margin-bottom:18px;
 }
-.hero-content h2{
-  font-size:3rem;
-  font-weight:900;
-  margin-bottom:20px;
+
+.hero p{
+max-width:720px;
+margin:auto;
+font-size:20px;
+opacity:.85;
+line-height:1.6;
 }
-.hero-content p{
-  font-size:1.3rem;
-  margin-bottom:36px;
+
+.cta{
+margin-top:40px;
+padding:18px 44px;
+font-size:20px;
+border-radius:14px;
+border:none;
+font-weight:700;
+background:#ff2ea6;
+color:white;
+cursor:pointer;
+transition:.25s;
 }
+
+.cta:hover{
+background:gold;
+color:black;
+transform:scale(1.06);
+}
+
 .counter{
-  font-size:2rem;
-  font-weight:800;
-  margin:16px 0;
-  color:var(--cyan);
+margin-top:50px;
+font-size:34px;
+font-weight:700;
 }
 
-/* Buttons TikTok Style */
-.btn{
-  padding:16px 36px;
-  border-radius:16px;
-  font-weight:700;
-  color:white;
-  background:linear-gradient(45deg,var(--pink),var(--cyan));
-  border:none;
-  cursor:pointer;
-  font-size:1rem;
-  margin:8px;
-  transition:all .3s;
-}
-.btn:hover{
-  transform:translateY(-3px);
-  background:linear-gradient(45deg,var(--cyan),var(--pink));
-}
-.btn-outline{
-  background:transparent;
-  color:var(--pink);
-  border:2px solid var(--pink);
-}
-.btn-outline:hover{
-  color:var(--cyan);
-  border-color:var(--cyan);
+/* SECTIONS */
+
+.section{
+padding:90px 20px;
+text-align:center;
 }
 
-/* Grid / Cards */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:32px;
-  padding:40px 32px;
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
+margin-top:50px;
 }
+
 .card{
-  background:rgba(0,0,0,0.85);
-  color:white;
-  padding:24px;
-  border-radius:20px;
-  box-shadow:var(--shadow);
-  text-align:center;
-  transition:transform 0.3s;
-  cursor:pointer;
+width:320px;
+background:rgba(255,255,255,.08);
+padding:40px 28px;
+border-radius:22px;
+backdrop-filter:blur(12px);
+transition:.25s;
 }
-.card:hover{transform:translateY(-8px);}
-.card h3{font-size:1.5rem;margin-bottom:12px;}
-.card .price{font-size:1.8rem;font-weight:800;color:var(--cyan);margin-bottom:12px;}
-.card img{width:100%;border-radius:12px;margin-top:12px;}
-.card button{
-  margin-top:12px;
-  padding:14px 28px;
-  font-weight:700;
-  border:none;
-  border-radius:16px;
-  background:linear-gradient(45deg,var(--pink),var(--cyan));
-  color:white;
-  cursor:pointer;
-}
-.card button:hover{background:linear-gradient(45deg,var(--cyan),var(--pink));}
 
-/* Footer */
+.card:hover{transform:translateY(-8px)}
+
+.price{
+font-size:42px;
+font-weight:800;
+margin:20px 0;
+}
+
+.buy{
+display:block;
+margin-top:18px;
+padding:16px;
+border-radius:12px;
+background:#ff2ea6;
+color:white;
+text-decoration:none;
+font-weight:700;
+transition:.25s;
+}
+
+.buy:hover{background:gold;color:black}
+
+/* CRYSTALS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:20px;
+margin-top:40px;
+padding:0 30px;
+}
+
+.crystal{
+background:rgba(255,255,255,.07);
+padding:12px;
+border-radius:16px;
+cursor:pointer;
+transition:.2s;
+}
+
+.crystal img{width:100%;border-radius:10px}
+.crystal:hover{transform:scale(1.05)}
+
+.lock{opacity:.25;pointer-events:none}
+
+/* PROFILE */
+
+.profile{
+max-width:600px;
+margin:40px auto;
+background:rgba(255,255,255,.08);
+padding:30px;
+border-radius:20px;
+}
+
+.saved{margin-top:12px;opacity:.85}
+
 footer{
-  padding:32px;
-  text-align:center;
-  background:rgba(0,0,0,0.85);
-  color:white;
+text-align:center;
+margin-top:100px;
+opacity:.6;
+padding-bottom:40px;
 }
-footer a{color:var(--pink);}
-footer a:hover{color:var(--cyan);}
+
 </style>
+
 </head>
+
 <body>
+<div class="overlay">
 
-<header>
-  <h1>COLORGY AI</h1>
-  <img src="images/ai-colorgy-crystal-identifier-app.0.pic.png" alt="Colorgy Logo">
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#features">Features</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#profile">Profile</a>
-    <a href="#crystals">Crystals</a>
-  </nav>
-</header>
+<nav>
+<div class="logo">COLORGY AI</div>
+<div>
+<a href="#scan">Scan</a>
+<a href="#pricing">Pricing</a>
+<a href="#crystals">Crystals</a>
+<a href="#profile">Profile</a>
+</div>
+</nav>
 
-<section id="home" class="hero">
-  <div class="hero-content">
-    <h2>Discover & Scan Crystals Instantly</h2>
-    <p>Colorgy AI recognizes crystals, explains their meaning, ai-powered analysis.<br>Educational & spiritual insights clearly labeled.</p>
-    <div class="counter" id="scanCounter">Scans today: 0 / 3</div>
-    <button class="btn" id="freeScanBtn">Start Free Scan</button>
-  </div>
+<section class="hero" id="scan">
+<h1>Discover & Scan Crystals Instantly</h1>
+<p>AI recognizes crystals, explains their meaning and provides educational & spiritual insights clearly labeled.</p>
+<button class="cta" onclick="scan()">Start Free Scan</button>
+<div class="counter" id="counter">0 scans today</div>
 </section>
 
-<section id="features" class="grid">
-  <div class="card">
-    <h3>Free Scan</h3>
-    <p>3 scans/day · 7-day trial</p>
-    <button onclick="window.location.href='https://buy.stripe.com/test_free'">Start Free</button>
-  </div>
-  <div class="card">
-    <h3>Pro</h3>
-    <p>Unlimited scans + full crystal analysis</p>
-    <div class="price">$6.99 / 3 Months</div>
-    <button onclick="window.location.href='https://buy.stripe.com/test_pro_3m'">Subscribe</button>
-  </div>
-  <div class="card">
-    <h3>Premium</h3>
-    <p>Unlimited scans + all features</p>
-    <div class="price">$39.99 / 1 Year</div>
-    <button onclick="window.location.href='https://buy.stripe.com/test_premium_1y'">Subscribe</button>
-  </div>
+<section id="pricing" class="section">
+<h2>Unlock Full Analysis</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Free</h3>
+<div class="price">$0</div>
+<p>Basic identification</p>
+<a class="buy" href="https://buy.stripe.com/8x28wPevE12JeOYfsB8Vi05">Start Free</a>
+</div>
+
+<div class="card">
+<h3>Pro</h3>
+<div class="price">$6.99</div>
+<p>3 Months full access</p>
+<a class="buy" href="https://buy.stripe.com/cNi5kDcnw3aR6is3JT8Vi03">Upgrade</a>
+</div>
+
+<div class="card">
+<h3>Premium</h3>
+<div class="price">$39.99</div>
+<p>1 Year unlimited</p>
+<a class="buy" href="https://buy.stripe.com/7sYdR9cnwfXD7mw8098Vi04">Go Premium</a>
+</div>
+
+</div>
 </section>
 
-<section id="profile" class="grid">
-  <div class="card">
-    <h3>My Crystal Profile</h3>
-    <p>Save and track your scanned crystals and favorite stones.</p>
-  </div>
+<section id="crystals" class="section">
+<h2>Crystal Lexicon</h2>
+
+<div class="grid" id="lexicon">
+
+<div class="crystal"><img src="images/Achat-Agate.jpg"><p>Achat</p></div>
+<div class="crystal"><img src="images/Bergkristall-Rock-Crystal.jpg"><p>Bergkristall</p></div>
+<div class="crystal"><img src="images/Diamant-Diamond.jpg"><p>Diamant</p></div>
+<div class="crystal"><img src="images/Edelopal-Opal.jpg"><p>Opal</p></div>
+<div class="crystal"><img src="images/Rosenquarz-Rose-Quartz.jpg"><p>Rosenquarz</p></div>
+<div class="crystal"><img src="images/Ruby.jpg"><p>Rubin</p></div>
+
+</div>
 </section>
 
-<section id="crystals" class="grid">
-  <div class="card" onclick="window.open('https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Achat','_blank')">
-    <h3>Achat / Agate</h3>
-    <img src="images/Achat-Agate.jpg" alt="Achat">
-  </div>
-  <div class="card" onclick="window.open('https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Bergkristall','_blank')">
-    <h3>Bergkristall / Rock Crystal</h3>
-    <img src="images/Bergkristall-Rock-Crystal.jpg" alt="Bergkristall">
-  </div>
-  <div class="card" onclick="window.open('https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Diamant','_blank')">
-    <h3>Diamant / Diamond</h3>
-    <img src="images/Diamant-Diamond.jpg" alt="Diamant">
-  </div>
-  <div class="card" onclick="window.open('https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Diamantgruppe','_blank')">
-    <h3>Diamantgruppe / Diamond Cluster</h3>
-    <img src="images/Diamantgruppe.jpg" alt="Diamantgruppe">
-  </div>
-  <div class="card" onclick="window.open('https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Edelopal','_blank')">
-    <h3>Edelopal / Opal</h3>
-    <img src="images/Edelopal-Opal.jpg" alt="Edelopal">
-  </div>
-  <div class="card" onclick="window.open('https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Eisenmeteorit','_blank')">
-    <h3>Eisenmeteorit / Iron Meteorite</h3>
-    <img src="images/Eisenmeteorit-feiner-Oktaedrit-4-A-Iron-IVA-iron-iron-group-meteorite.jpg" alt="Eisenmeteorit">
-  </div>
-  <!-- Füge alle anderen Edelsteine analog hier ein -->
+<section id="profile" class="section">
+<h2>My Crystal Profile</h2>
+
+<div class="profile">
+<p>Save and track your scanned crystals</p>
+<div id="saved"></div>
+</div>
+
 </section>
 
-<footer>
-  &copy; 2026 COLORGY AI | <a href="#">Impressum</a>
-</footer>
+<footer>© COLORGY AI</footer>
+
+</div>
 
 <script>
-let scansToday = 0;
-const scanCounter = document.getElementById("scanCounter");
-const freeScanBtn = document.getElementById("freeScanBtn");
 
-freeScanBtn.addEventListener("click",()=>{
-  if(scansToday>=3){
-    window.location.href="https://buy.stripe.com/test_pro_3m";
-    return;
-  }
-  scansToday++;
-  scanCounter.textContent=`Scans today: ${scansToday} / 3`;
-});
+let scans=0
+function scan(){
+scans++
+document.getElementById("counter").innerText=scans+" scans today"
+localStorage.setItem("scans",scans)
+}
+
 </script>
 
 </body>
