@@ -143,33 +143,33 @@ footer{text-align:center;margin-top:80px;opacity:.6;padding-bottom:40px}
 <section class="info-section">
   <div class="container">
     
-      <h3 class="small-note">
-      Understand crystals — not just their name</h3>
+      <div class="feature">
+      <h4>Understand crystals — not just their name</h4>
         <div>COLORGY AI identifies gemstones in seconds and explains what they actually mean for you</div>
       </div>
 
-      <h3 class="small-note">
-      Instant recognition</h3>
+      <div class="feature">
+      <h4>Instant recognition</h4>
         <div>Take a photo and the AI analyzes structure, color and type.</div>
       </div>
 
-      <<h3 class="small-note">
-      Meaning & symbolism</h3>
+      <div class="feature">
+      <h4>Meaning & symbolism</h4>
         <div>Receive energetic, emotional and psychological associations clearly explained.</div>
       </div>
 
-      <h3 class="small-note">
-      Usage guidance</h3>
+      <div class="feature">
+      <h4>Usage guidance</h4>
         <div>Suggestions for focus, calm, creativity or protection.</div>
       </div>
 
-      <h3 class="small-note">
-      Personal crystal profile</h3>
+      <div class="feature">
+      <h4>Personal crystal profile</h4>
         <div>Your scans are saved and organized automatically.</div>
       </div>
 
-      <h3 class="small-note">
-      Free users can try the scanner. </h3><br>
+      <div class="feature">
+      <h4>Free users can try the scanner. </h4><br>
         <div>Full lexicon, unlimited scans and tracking unlock with Pro.</div>
 
 <section id="pricing" class="section">
@@ -198,7 +198,23 @@ footer{text-align:center;margin-top:80px;opacity:.6;padding-bottom:40px}
 <a class="buy" onclick="unlockPro()" href="https://buy.stripe.com/7sYdR9cnwfXD7mw8098Vi04" id="premium_btn">Go Premium</a>
 </div>
 
+<section id="crystals" class="section">
+<h2 id="lexicon_title">Crystal Lexicon</h2>
+<div class="grid" id="lexicon">
+<div class="crystal locked"><img src="images/Achat-Agate.jpg"><p>Agate</p></div>
+<div class="crystal locked"><img src="images/Bergkristall-Rock-Crystal.jpg"><p>Rock Crystal</p></div>
+<div class="crystal locked"><img src="images/Diamant-Diamond.jpg"><p>Diamond</p></div>
+<div class="crystal locked"><img src="images/Edelopal-Opal.jpg"><p>Black Opal</p></div>
+<div class="crystal locked"><img src="images/Rosenquarz-Rose-Quartz.jpg"><p>Rose Quarz</p></div>
+<div class="crystal locked"><img src="images/Ruby.jpg"><p>Ruby</p></div>
 </div>
+</section>
+
+<section id="profile" class="section">
+<h2 id="profile_title">My Crystal Profile</h2>
+<div class="profile"><div id="saved">No scans yet</div></div>
+</section> 
+  </div>
     <section class="trust-section">
       <div class="container">
        <h3 class="small-note">
@@ -216,23 +232,6 @@ footer{text-align:center;margin-top:80px;opacity:.6;padding-bottom:40px}
        <div class="feature">
        <div>Learn faster than searching forums</div>
     </section>
-
-<section id="crystals" class="section">
-<h2 id="lexicon_title">Crystal Lexicon</h2>
-<div class="grid" id="lexicon">
-<div class="crystal locked"><img src="images/Achat-Agate.jpg"><p>Agate</p></div>
-<div class="crystal locked"><img src="images/Bergkristall-Rock-Crystal.jpg"><p>Rock Crystal</p></div>
-<div class="crystal locked"><img src="images/Diamant-Diamond.jpg"><p>Diamond</p></div>
-<div class="crystal locked"><img src="images/Edelopal-Opal.jpg"><p>Black Opal</p></div>
-<div class="crystal locked"><img src="images/Rosenquarz-Rose-Quartz.jpg"><p>Rose Quarz</p></div>
-<div class="crystal locked"><img src="images/Ruby.jpg"><p>Ruby</p></div>
-</div>
-</section>
-
-<section id="profile" class="section">
-<h2 id="profile_title">My Crystal Profile</h2>
-<div class="profile"><div id="saved">No scans yet</div></div>
-</section>
 
 <footer id="footer">2026 © COLORGY AI Educational & spiritual insights clearly labeled.</footer>
 </div>
@@ -297,19 +296,6 @@ nav_profile.innerText="Profile";
 footer.innerText="2026 © COLORGY AI Educational & spiritual insights clearly labeled.";
 }
 }
-</script>
-<script>
-function toggleLang(){
-const en=document.getElementById('en');
-const de=document.getElementById('de');
-en.classList.toggle('hidden');
-de.classList.toggle('hidden');
-}
-function startTimer(id){
-let t=900;const el=document.getElementById(id);
-setInterval(()=>{let m=Math.floor(t/60),s=t%60;el.textContent=`${m}:${s.toString().padStart(2,'0')} LIMITED OFFER`;if(t>0)t--},1000);
-}
-startTimer('timer');startTimer('timer2');
 </script>
 </body>
 </html>
