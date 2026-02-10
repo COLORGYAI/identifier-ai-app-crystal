@@ -228,7 +228,29 @@ footer{text-align:center;margin-top:80px;opacity:.6;padding-bottom:40px}
         
 <footer id="footer">2026 © COLORGY AI Educational & spiritual insights clearly labeled.</footer>
 </div>
+<script>
+let scans=Number(localStorage.getItem('scans')||0);
+document.getElementById('counter').innerText=scans;
 
+document.getElementById('camera').addEventListener('change',async e=>{
+ const file=e.target.files[0];
+ if(!file) return;
+ const reader=new FileReader();
+ reader.onload=async ()=>{
+  document.getElementById('result').innerText='Analyzing...';
+  const res=await fetch('/.netlify/functions/scan',{
+   method:'POST',
+   headers:{'Content-Type':'application/json'},
+   body:JSON.stringify({image:reader.result})
+  });
+  const data=await res.json();
+  document.getElementById('result').innerText=data.result||'No result';
+  scans++; localStorage.setItem('scans',scans);
+  document.getElementById('counter').innerText=scans;
+ };
+ reader.readAsDataURL(file);
+});
+</script>
 <script>
 let scans=Number(localStorage.getItem('scans')||0);
 document.getElementById('counter').innerText=scans;
