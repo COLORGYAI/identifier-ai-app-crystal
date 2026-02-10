@@ -7,12 +7,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg-light:#fdfdfc;
-  --indigo:#0A0E2E;
-  --gold:#c9a24d;
-  --pink:#ff4db8;
+  --bg-light:#f8f7f5;
+  --indigo:#10133C;
+  --gold:#d4b75c;
+  --pink:#ff3ca6;
   --shadow:0 12px 38px rgba(0,0,0,.25);
   --card-bg:rgba(255,255,255,0.95);
+  --btn-hover:#d4b75c;
 }
 
 /* Reset */
@@ -25,10 +26,25 @@ body::before{
   position:fixed;
   top:0;left:0;width:100%;height:100%;
   background-image:
-    url('images/Edelopal-Opal.jpg')
+    url('images/Achat-Agate.jpg'),
+    url('images/Bergkristall-Rock-Crystal.jpg'),
+    url('images/Diamant-Diamond.jpg'),
+    url('images/Diamantgruppe.jpg'),
+    url('images/Edelopal-Opal.jpg'),
+    url('images/Eisenmeteorit-feiner-Oktaedrit-4-A-Iron-IVA-iron-iron-group-meteorite.jpg'),
+    url('images/Elbait.jpg'),
+    url('images/Gold.jpg'),
+    url('images/Kupfer-Silber-Copper-Silver.jpg'),
+    url('images/Lapis-Lazuli.jpg'),
+    url('images/Larimar-Pektolith-Atlantisstein.jpg'),
+    url('images/Larimar.jpg'),
+    url('images/Platin-Gold-Gold-Platinum.jpg'),
+    url('images/Quartz-Var-Amethyst-Amethyst.jpg'),
+    url('images/Rosenquarz-Rose-Quartz.jpg'),
+    url('images/Ruby.jpg');
   background-size:25% 25%;
   background-repeat:repeat;
-  opacity:0.03;
+  opacity:0.12;
   z-index:-1;
 }
 
@@ -36,7 +52,7 @@ body::before{
 header{
   background:var(--indigo);
   color:white;
-  padding:16px 22px;
+  padding:16px 32px;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -45,9 +61,14 @@ header{
   z-index:100;
 }
 header h1{
-  font-size:1.8rem;
+  font-size:1.6rem;
   font-weight:900;
   color:var(--gold);
+}
+header img{
+  width:120px;
+  height:120px;
+  object-fit:contain;
 }
 nav a{
   margin-left:24px;
@@ -72,26 +93,26 @@ nav a:hover{color:var(--pink);}
   z-index:1;
   max-width:750px;
   background: var(--card-bg);
-  padding: 32px 36px;
+  padding: 36px;
   border-radius: 24px;
   box-shadow: var(--shadow);
 }
 .hero-content h2{
-  font-size:3rem;
+  font-size:2.8rem;
   font-weight:900;
   margin-bottom:20px;
   color:var(--indigo);
 }
 .hero-content p{
-  font-size:1.3rem;
+  font-size:1.25rem;
   margin-bottom:36px;
-  color:var(--pink);
+  color:var(--indigo);
 }
 .counter{
   margin:16px 0;
   font-size:2rem;
   font-weight:800;
-  color:var(--indigo);
+  color:var(--pink);
 }
 .counter.highlight{
   color:var(--gold);
@@ -104,20 +125,20 @@ nav a:hover{color:var(--pink);}
   border-radius:20px;
   font-weight:700;
   color:white;
-  background:var(--gold);
+  background:var(--pink);
   border:none;
   cursor:pointer;
   font-size:1.1rem;
   margin-right:12px;
   transition:all .3s;
 }
-.btn:hover{background:var(--gold); color:var(--indigo);}
+.btn:hover{background:var(--btn-hover); color:var(--indigo);}
 .btn-outline{
   background:transparent;
   color:var(--indigo);
   border:2px solid var(--gold);
 }
-.btn-outline:hover{color:var(--gold);border-color:var(--indigo);}
+.btn-outline:hover{color:var(--pink);border-color:var(--pink);}
 
 /* Grid / Cards */
 .grid{
@@ -128,7 +149,7 @@ nav a:hover{color:var(--pink);}
 }
 .card{
   background:var(--card-bg);
-  color:var(--gold);
+  color:var(--indigo);
   padding:24px;
   border-radius:20px;
   box-shadow:var(--shadow);
@@ -137,14 +158,14 @@ nav a:hover{color:var(--pink);}
 }
 .card:hover{transform:translateY(-8px);}
 .card h3{font-size:1.5rem;margin-bottom:12px;}
-.card .price{font-size:1.7rem;font-weight:800;color:var(--indigo);margin-bottom:12px;}
+.card .price{font-size:1.7rem;font-weight:800;color:var(--gold);margin-bottom:12px;}
 .card button{
   margin-top:12px;
   padding:14px 28px;
   font-weight:700;
   border:none;
   border-radius:14px;
-  background:var(--gold);
+  background:var(--pink);
   color:white;
   cursor:pointer;
 }
@@ -161,7 +182,7 @@ nav a:hover{color:var(--pink);}
 }
 .overlay.active{display:flex;}
 .overlay-content{
-  background:white;color:var(--gold);
+  background:white;color:var(--indigo);
   padding:32px;border-radius:20px;
   max-width:500px;text-align:center;
 }
@@ -173,13 +194,14 @@ nav a:hover{color:var(--pink);}
 footer{padding:32px;text-align:center;background:var(--indigo);color:white;}
 footer a{color:var(--pink);}
 
-@media(max-width:800px){.hero-content h2{font-size:2.4rem;}}
+@media(max-width:800px){.hero-content h2{font-size:2.2rem;}}
 </style>
 </head>
 <body>
 
 <header>
   <h1>COLORGY AI</h1>
+  <img src="images/ai-colorgy-crystal-identifier-app.0.pic.png" alt="COLORGY AI Logo">
   <nav>
     <a href="#home">Home</a>
     <a href="#features">Features</a>
@@ -192,7 +214,7 @@ footer a{color:var(--pink);}
 <section id="home" class="hero">
   <div class="hero-content">
     <h2>Discover & Scan Crystals Instantly</h2>
-    <p>Colorgy AI recognizes crystals, explains their meaning, AI-powered analysis. Educational & spiritual insights clearly labeled.</p>
+    <p>Colorgy AI recognizes crystals, explains their meaning, AI-powered analysis.<br>Educational & spiritual insights clearly labeled.</p>
     <div class="counter" id="scanCounter">Scans today: 0 / 3</div>
     <div class="counter highlight" id="luckyCounter">Lucky 100th Pro: 0 / 100</div>
     <button class="btn" id="freeScanBtn">Start Free Scan</button>
@@ -211,56 +233,49 @@ footer a{color:var(--pink);}
     <h3>Freemium</h3>
     <div class="price">0$</div>
     <p>3 scans/day</p>
-    <button onclick="window.location.href='https://buy.stripe.com/test_free'">Start Free</button>
+    <button onclick="window.location.href='https://buy.stripe.com/test_0usd'">Start Free</button>
   </div>
   <div class="card">
     <h3>Pro - 3 Months</h3>
     <div class="price">$6.99</div>
     <p>Unlimited scans + full analysis</p>
-    <button onclick="window.location.href='https://buy.stripe.com/test_pro_3m'">Subscribe</button>
+    <button onclick="window.location.href='https://buy.stripe.com/test_pro_3months'">Subscribe</button>
   </div>
   <div class="card">
     <h3>Premium - 1 Year</h3>
     <div class="price">$39.99</div>
     <p>All features + crystal lexicon access</p>
-    <button onclick="window.location.href='https://buy.stripe.com/test_premium_1y'">Subscribe</button>
+    <button onclick="window.location.href='https://buy.stripe.com/test_premium_1year'">Subscribe</button>
   </div>
 </section>
 
 <section id="profile" class="grid">
   <div class="card">
     <h3>My Crystal Profile</h3>
-    <p>Save and track your scanned crystals and favorite stones.</p>
+    <p>Save and track your scanned crystals and favorite gemstones.</p>
   </div>
 </section>
 
 <section id="crystals" class="grid">
-  <!-- Alle Edelsteine click-to-lexicon -->
+  <!-- Crystal cards -->
   <div class="card" onclick="openOverlay('Achat / Agate','https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Achat')">
-    <h3>Achat / Agate</h3>
-    <img src="images/Achat-Agate.jpg" alt="Achat">
+    <h3>Achat / Agate</h3><img src="images/Achat-Agate.jpg" alt="Achat">
   </div>
   <div class="card" onclick="openOverlay('Bergkristall / Rock Crystal','https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Bergkristall')">
-    <h3>Bergkristall / Rock Crystal</h3>
-    <img src="images/Bergkristall-Rock-Crystal.jpg" alt="Bergkristall">
+    <h3>Bergkristall / Rock Crystal</h3><img src="images/Bergkristall-Rock-Crystal.jpg" alt="Bergkristall">
   </div>
   <div class="card" onclick="openOverlay('Diamant / Diamond','https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Diamant')">
-    <h3>Diamant / Diamond</h3>
-    <img src="images/Diamant-Diamond.jpg" alt="Diamant">
+    <h3>Diamant / Diamond</h3><img src="images/Diamant-Diamond.jpg" alt="Diamant">
   </div>
   <div class="card" onclick="openOverlay('Diamantgruppe / Diamond Cluster','https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Diamantgruppe')">
-    <h3>Diamantgruppe / Diamond Cluster</h3>
-    <img src="images/Diamantgruppe.jpg" alt="Diamantgruppe">
+    <h3>Diamantgruppe / Diamond Cluster</h3><img src="images/Diamantgruppe.jpg" alt="Diamantgruppe">
   </div>
   <div class="card" onclick="openOverlay('Edelopal / Opal','https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Edelopal')">
-    <h3>Edelopal / Opal</h3>
-    <img src="images/Edelopal-Opal.jpg" alt="Edelopal">
+    <h3>Edelopal / Opal</h3><img src="images/Edelopal-Opal.jpg" alt="Edelopal">
   </div>
   <div class="card" onclick="openOverlay('Eisenmeteorit / Iron Meteorite','https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Eisenmeteorit')">
-    <h3>Eisenmeteorit / Iron Meteorite</h3>
-    <img src="images/Eisenmeteorit-feiner-Oktaedrit-4-A-Iron-IVA-iron-iron-group-meteorite.jpg" alt="Eisenmeteorit">
+    <h3>Eisenmeteorit / Iron Meteorite</h3><img src="images/Eisenmeteorit-feiner-Oktaedrit-4-A-Iron-IVA-iron-iron-group-meteorite.jpg" alt="Eisenmeteorit">
   </div>
-  <!-- Du kannst hier alle weiteren Edelsteine hinzufügen -->
 </section>
 
 <div class="overlay" id="overlay">
@@ -292,7 +307,7 @@ function updateCounters(){
 
 freeScanBtn.addEventListener("click", () => {
   if(scansToday >= 3){
-    window.location.href="https://buy.stripe.com/test_pro_3m";
+    window.location.href="https://buy.stripe.com/test_pro_3months";
     return;
   }
   scansToday++;
