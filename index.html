@@ -1,299 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>COLORGY AI</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
-:root{
---accent:#ff2ea6;
---accentHover:#ffd86b;
---glass:rgba(255,255,255,.08);
---text:#fff;
---font-family:Inter;
+:root {
+  --accent-en:#ff2ea6; /* Pink für EN */
+  --accent-de:#39ff14; /* Leuchtgrün für DE */
+  --gold:#ffd86b;
+  --glass:rgba(255,255,255,.08);
+  --white:#fff;
 }
-
-body.de{
---accent:#39ff14;
---accentHover:#aaff00;
-}
-
-*{box-sizing:border-box;margin:0;padding:0;font-family:Inter}
-body{color:var(--text);background:url('images/Achat-Agate.jpg') center/cover fixed no-repeat}
-
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',sans-serif}
+body{color:#fff;background:url('images/Achat-Agate.jpg') center/cover fixed no-repeat;}
 .wrap{background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.88));min-height:100vh}
-  .app-description{
-max-width:900px;
-margin:80px auto;
-padding:0 24px;
-line-height:1.8;
-}
-
-.app-description h2{
-font-size:42px;
-font-weight:800;
-margin-bottom:28px;
-letter-spacing:-0.02em;
-}
-
-.app-description .lead{
-font-size:22px;
-opacity:.9;
-margin-bottom:60px;
-}
-
-.feature{
-margin-bottom:38px;
-}
-
-.feature h3{
-font-size:24px;
-font-weight:700;
-margin-bottom:8px;
-}
-
-.feature p{
-font-size:18px;
-margin-bottom:9px;
-opacity:.85;
-}
-
-.note{
-margin-top:50px;
-font-size:18px;
-opacity:.8;
-}
-
-.why{
-margin-top:90px;
-}
-
-.reasons{
-margin-top:30px;
-font-size:20px;
-line-height:2.1;
-padding-left:20px;
-}
-
-
 nav{display:flex;justify-content:space-between;align-items:center;padding:22px 50px}
 .logo{font-weight:800;font-size:26px;letter-spacing:.20em}
 nav a{color:#fff;text-decoration:none;margin-left:24px;opacity:.75}
 nav a:hover{opacity:1}
-.lang{margin-left:30px;border:1px solid #fff3;padding:6px 12px;border-radius:20px;cursor:pointer}
-
+.lang{margin-left:30px;border:1px solid #fff;padding:6px 12px;border-radius:20px;cursor:pointer}
 .hero{text-align:center;padding:120px 20px}
-.hero h1{font-size:60px;font-weight:900}
-.hero p{max-width:920px;margin:18px auto;font-size:25px;opacity:.85}
-
-.cta{margin-top:40px;padding:18px 48px;font-size:22px;border:none;border-radius:16px;background:var(--accent);color:#fff;font-weight:700;cursor:pointer;transition:.25s}
-.cta:hover{background:var(--accentHover);color:#000;transform:scale(1.07)}
-
-.counter{font-size:70px;font-weight:800;margin-top:40px}
-  
-
+.hero h1{font-size:60px;font-weight:900;line-height:1.2;margin-bottom:24px}
+.hero p{max-width:920px;margin:24px auto;font-size:26px;opacity:.85;line-height:1.8}
+.cta{margin-top:40px;padding:20px 52px;font-size:24px;border:none;border-radius:16px;color:#000;font-weight:700;cursor:pointer;transition:.25s}
+.cta:hover{background:var(--gold);color:#000;transform:scale(1.07)}
+.counter{font-size:90px;font-weight:900;margin-top:50px;color:var(--gold)}
 .section{text-align:center;padding:90px 20px}
 .cards{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:50px}
-
-.card{width:330px;background:var(--glass);padding:40px 28px;border-radius:26px;backdrop-filter:blur(12px);position:relative}
-
-.badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accentHover);color:#000;padding:6px 16px;border-radius:30px;font-size:13px;font-weight:700}
-
-.price{font-size:44px;font-weight:800;margin:18px 0}
-
-.buy{display:block;margin-top:20px;padding:16px;border-radius:14px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
-.buy:hover{background:var(--accentHover);color:#000}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:22px;margin-top:50px;padding:0 40px}
-
-.crystal{background:var(--glass);padding:12px;border-radius:18px;cursor:pointer;transition:.2s}
+.card{width:340px;background:var(--glass);padding:42px 30px;border-radius:28px;backdrop-filter:blur(14px);position:relative}
+.badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold);color:#000;padding:6px 16px;border-radius:30px;font-size:13px;font-weight:700}
+.price{font-size:46px;font-weight:800;margin:20px 0}
+.buy{display:block;margin-top:22px;padding:18px;border-radius:16px;text-decoration:none;font-weight:700;text-align:center;transition:.25s}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:24px;margin-top:50px;padding:0 40px}
+.crystal{background:var(--glass);padding:14px;border-radius:18px;cursor:pointer;transition:.2s}
 .crystal img{width:100%;border-radius:12px}
 .crystal:hover{transform:scale(1.06)}
 .locked{opacity:.25;pointer-events:none}
-
-.profile{max-width:600px;margin:40px auto;background:var(--glass);padding:28px;border-radius:22px}
-
+.profile{max-width:600px;margin:40px auto;background:var(--glass);padding:30px;border-radius:24px}
+.identifier-info { padding:60px 20px; text-align:center; background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); margin:40px 0;}
+.identifier-info .container { max-width: 900px; margin:auto }
+.identifier-info h2 { font-size:44px; font-weight:900; margin-bottom:26px }
+.identifier-info .intro { font-size:21px; color:rgba(255,255,255,0.90); line-height:1.8; margin-bottom:40px }
+.features-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:36px; margin-bottom:30px }
+.feature-block h3 { font-size:22px; font-weight:700; margin-bottom:10px }
+.feature-block p { font-size:18px; opacity:.85; line-height:1.6 }
+.identifier-info .note { font-size:18px; opacity:.8; margin-top:28px }
 footer{text-align:center;margin-top:80px;opacity:.6;padding-bottom:40px}
+@media(max-width:800px){
+  .hero h1{font-size:36px}
+  .hero p{font-size:18px}
+  .cta{font-size:20px;padding:16px 36px}
+  .counter{font-size:70px}
+}
 </style>
 </head>
-
 <body>
 <div class="wrap">
 
 <nav>
-<div class="logo">COLORGY AI</div>
+<div class="logo">
+  <img src="images/ai-colorgy-crystal-identifier-app.0.pic.png" alt="COLORGY AI Logo" style="height:50px;vertical-align:middle;margin-right:10px">
+  COLORGY AI
+</div>
 <div>
-<a href="#scan" id="nav_home">Home</a>
-<a href="#pricing" id="nav_price">Pricing</a>
-<a href="#crystals" id="nav_crystals">Crystals</a>
-<a href="#profile" id="nav_profile">Profile</a>
+<a href="#scan">Home</a>
+<a href="#pricing">Pricing</a>
+<a href="#crystals">Lexikon</a>
+<a href="#profile">Profil</a>
 <span class="lang" onclick="toggleLang()">🌐</span>
 </div>
 </nav>
 
 <section id="scan" class="hero">
-<h1 id="title">Discover & Scan Crystals Instantly</h1>
-<p id="subtitle">Colorgy AI recognizes crystals and explains their meaning using AI analysis.</p>
-<button class="cta" onclick="scan()" id="scanbtn">Start Free Scan</button>
+<h1 id="title">Kristalle sofort scannen</h1>
+<p id="subtitle">COLORGY AI erkennt Edelsteine in Sekunden und erklärt, was sie für dich bedeuten.</p>
+<button class="cta" id="scanbtn" onclick="scan()">Gratis Scan starten</button>
 <div class="counter" id="counter">0</div>
-
-<section class="info-section">
-  <div class="container">
-    
-      <div class="info-section">
-        <h3>Understand crystals — not just their name</h3>
-        <div>COLORGY AI identifies gemstones in seconds and explains what they actually mean for you</div>
-       </div>
-
-      <div class="info-section">
-        <h3>nstant recognition</h3>
-        <div>Take a photo and the AI analyzes structure, color and type.</div>
-      </div>
-
-      <div class="info-section">
-        <h3>Meaning & symbolism</h3>
-        <div>Receive energetic, emotional and psychological associations clearly explained.</div>
-      </div>
-
-      <div class="info-section">
-        <h3>Usage guidance</h3>
-        <div>Suggestions for focus, calm, creativity or protection.</div>
-      </div>
-
-      <div class="info-section">
-        <h3>Personal crystal profile</h3>
-        <div>Your scans are saved and organized automatically.</div>
-      </div>
-
-      <div class="info-section">
-        <h3>Free users can try the scanner. </h3><br>
-        <div>Full lexicon, unlimited scans and tracking unlock with Pro.</div>
+</section>
 
 <section id="pricing" class="section">
-<h2 id="unlock">Unlock Full Access</h2>
+<h2 id="pricing-title">Vollen Zugriff freischalten</h2>
 <div class="cards">
-
 <div class="card">
-<h3 id="free_title">Free</h3>
-<div class="price">$0</div>
-<p id="free_desc">3 scan per day/7 day trial</p>
-<a class="buy" href="https://buy.stripe.com/8x28wPevE12JeOYfsB8Vi05" id="free_btn">Start</a>
+<h3 id="plan-free">Gratis</h3>
+<div class="price">0 €</div>
+<p>3 Scans/Tag, 7 Tage Test</p>
+<a class="buy" id="btn-free" href="https://buy.stripe.com/8x28wPevE12JeOYfsB8Vi05">Starten</a>
 </div>
-
 <div class="card">
-<div class="badge" id="rec">Recommended</div>
-<h3>Pro</h3>
-<div class="price">$6.99</div>
-<p id="pro_desc">Full identification & lexicon</p>
-<a class="buy" onclick="unlockPro()" href="https://buy.stripe.com/3cI00j9bk7r75eoeox8Vi06" id="pro_btn">Upgrade</a>
+<div class="badge">Empfohlen</div>
+<h3 id="plan-pro">Pro 3 Monate</h3>
+<div class="price">19,90 €</div>
+<p>3 Monate unbegrenzte Scans + Lexikon</p>
+<a class="buy" id="btn-pro" href="https://buy.stripe.com/cNi5kDcnw3aR6is3JT8Vi03">Pro abonnieren</a>
 </div>
-
 <div class="card">
-<h3>Premium</h3>
-<div class="price">$39.99</div>
-<p id="premium_desc">1 year unlimited access</p>
-<a class="buy" onclick="unlockPro()" href="https://buy.stripe.com/7sYdR9cnwfXD7mw8098Vi04" id="premium_btn">Go Premium</a>
+<h3 id="plan-premium">Premium 1 Jahr</h3>
+<div class="price">49,90 €</div>
+<p>1 Jahr unbegrenzte Scans + Lexikon</p>
+<a class="buy" id="btn-premium" href="https://buy.stripe.com/7sYdR9cnwfXD7mw8098Vi04">Premium abonnieren</a>
 </div>
-     
-    <div class="info-section">
-        <h3>Why people use Colorgy AI</h3>
-        </div>
-        <div class="feature">
-        <div>Spiritual users understand meanings</div>
-        
-        <div class="feature">
-        <div>Collectors verify stones</div>
-       
-        <div class="feature">
-        <div>Designers choose colors intentionally</div>
-      
-        <div class="feature">
-        <div>Learn faster than searching forums</div>
+</div>
 </section>
+
+<section class="identifier-info">
+<div class="container">
+<h2 id="identifier-title">Crystal Identifier — Einfach, Schnell, Informativ</h2>
+<p class="intro" id="identifier-intro">COLORGY AI kombiniert visuelle Erkennung und Kristallwissen, um Edelsteine sofort zu identifizieren und zu erklären. Einfach Foto machen — die App analysiert Struktur, Farbe und Muster und liefert ein klares Ergebnis.</p>
+<div class="features-list">
+<div class="feature-block">
+<h3 id="feature-1">Präzise KI-Erkennung</h3>
+<p id="feature-1-text">Mache ein Foto und unsere KI erkennt Form, Farbe, Muster und Struktur des Kristalls.</p>
+</div>
+<div class="feature-block">
+<h3 id="feature-2">Bedeutung & Symbolik</h3>
+<p id="feature-2-text">Jeder Stein wird mit traditioneller Bedeutung, Hintergrund und Interpretation erklärt.</p>
+</div>
+<div class="feature-block">
+<h3 id="feature-3">Persönliches Kristallprofil</h3>
+<p id="feature-3-text">Deine Scans werden gespeichert und automatisch organisiert, damit du deine Entdeckungen verfolgen kannst.</p>
+</div>
+<div class="feature-block">
+<h3 id="feature-4">Zugriff auf Lexikon</h3>
+<p id="feature-4-text">Vollständige Edelsteindatenbank freischalten, um alle Kristalle an einem Ort zu lernen.</p>
+</div>
+</div>
+<p class="note" id="feature-note">Gratis Nutzer können Scanner testen. Vollzugriff, unbegrenzte Scans und Lexikon freischalten mit Pro.</p>
+</div>
+</section>
+
 <section id="crystals" class="section">
-<h2 id="lexicon_title">Crystal Lexicon</h2>
+<h2 id="crystals-title">Crystal Lexikon</h2>
 <div class="grid" id="lexicon">
-<div class="crystal locked"><img src="images/Achat-Agate.jpg"><p>Agate</p></div>
-<div class="crystal locked"><img src="images/Bergkristall-Rock-Crystal.jpg"><p>Rock Crystal</p></div>
-<div class="crystal locked"><img src="images/Diamant-Diamond.jpg"><p>Diamond</p></div>
-<div class="crystal locked"><img src="images/Edelopal-Opal.jpg"><p>Black Opal</p></div>
-<div class="crystal locked"><img src="images/Rosenquarz-Rose-Quartz.jpg"><p>Rose Quarz</p></div>
-<div class="crystal locked"><img src="images/Ruby.jpg"><p>Ruby</p></div>
+<div class="crystal locked"><img src="images/Achat-Agate.jpg"><p>Achat</p></div>
+<div class="crystal locked"><img src="images/Bergkristall-Rock-Crystal.jpg"><p>Bergkristall</p></div>
+<div class="crystal locked"><img src="images/Diamant-Diamond.jpg"><p>Diamant</p></div>
+<div class="crystal locked"><img src="images/Diamantgruppe.jpg"><p>Diamantgruppe</p></div>
+<div class="crystal locked"><img src="images/Edelopal-Opal.jpg"><p>Edelopal</p></div>
+<div class="crystal locked"><img src="images/Rosenquarz-Rose-Quartz.jpg"><p>Rosenquarz</p></div>
+<div class="crystal locked"><img src="images/Ruby.jpg"><p>Rubin</p></div>
 </div>
 </section>
 
 <section id="profile" class="section">
-<h2 id="profile_title">My Crystal Profile</h2>
-<div class="profile"><div id="saved">No scans yet</div></div>
+<h2 id="profile-title">Mein Kristallprofil</h2>
+<div class="profile"><div id="saved">Noch keine Scans</div></div>
 </section>
 
-<footer id="footer">2026 © COLORGY AI Educational & spiritual insights clearly labeled.</footer>
+<footer>2026 © COLORGY AI | Bildungs- & Spirituelle Einblicke klar erklärt.</footer>
+
 </div>
 
 <script>
 let scans=Number(localStorage.getItem('scans')||0);
 document.getElementById('counter').innerText=scans;
+function scan(){scans++;document.getElementById('counter').innerText=scans;localStorage.setItem('scans',scans)}
+function unlock(){localStorage.setItem('pro','1')}
+if(localStorage.getItem('pro')==='1'){document.querySelectorAll('.crystal').forEach(e=>e.classList.remove('locked'))}
 
-function scan(){
-scans++;
-document.getElementById('counter').innerText=scans;
-localStorage.setItem('scans',scans);
-}
-
-function unlockPro(){
-localStorage.setItem('pro','1');
-document.querySelectorAll('.crystal').forEach(e=>e.classList.remove('locked'));
-}
-
-if(localStorage.getItem('pro')==='1'){
-document.querySelectorAll('.crystal').forEach(e=>e.classList.remove('locked'));
-}
-
-/* LANGUAGE SWITCH */
-let lang='en';
+let lang='de';
 function toggleLang(){
-lang=lang==='en'?'de':'en';
-document.body.classList.toggle('de');
-
 if(lang==='de'){
-title.innerText="Kristalle sofort scannen";
-subtitle.innerText="Colorgy AI erkennt Kristalle und erklärt ihre Bedeutung mit KI.";
-scanbtn.innerText="Gratis Scan starten";
-unlock.innerText="Vollen Zugriff freischalten";
-free_desc.innerText="3 Scans pro Tag";
-pro_desc.innerText="Vollständige Identifikation & Lexikon";
-premium_desc.innerText="1 Jahr unbegrenzt";
-profile_title.innerText="Mein Kristall Profil";
-lexicon_title.innerText="Edelstein Lexikon";
-rec.innerText="Empfohlen";
-nav_home.innerText="Start";
-nav_price.innerText="Preise";
-nav_crystals.innerText="Steine";
-nav_profile.innerText="Profil";
-footer.innerText="2026 © COLORGY AI Bildungs- & spirituelle Hinweise gekennzeichnet";
-}
-else{
-title.innerText="Discover & Scan Crystals Instantly";
-subtitle.innerText="Colorgy AI recognizes crystals and explains their meaning using AI analysis.";
-scanbtn.innerText="Start Free Scan";
-unlock.innerText="Unlock Full Access";
-free_desc.innerText="3 scans per day";
-pro_desc.innerText="Full identification & lexicon";
-premium_desc.innerText="1 year unlimited access";
-profile_title.innerText="My Crystal Profile";
-lexicon_title.innerText="Crystal Lexicon";
-rec.innerText="Recommended";
-nav_home.innerText="Home";
-nav_price.innerText="Pricing";
-nav_crystals.innerText="Crystals";
-nav_profile.innerText="Profile";
-footer.innerText="2026 © COLORGY AI Educational & spiritual insights clearly labeled.";
+  lang='en';
+  document.getElementById('title').innerText='Discover & Scan Crystals Instantly';
+  document.getElementById('subtitle').innerText='COLORGY AI identifies gemstones in seconds and explains what they actually mean for you.';
+  document.getElementById('scanbtn').innerText='Start Free Scan';
+  document.getElementById('pricing-title').innerText='Unlock Full Access';
+  document.getElementById('plan-free').innerText='Free';
+  document.getElementById('btn-free').innerText='Start';
+  document.getElementById('plan-pro').innerText='Pro 3 Month';
+  document.getElementById('btn-pro').innerText='Subscribe Pro';
+  document.getElementById('plan-premium').innerText='Premium 1 Year';
+  document.getElementById('btn-premium').innerText='Subscribe Premium';
+  document.getElementById('identifier-title').innerText='Crystal Identifier — Simple, Fast, Informative';
+  document.getElementById('identifier-intro').innerText='COLORGY AI combines visual recognition and crystal knowledge to instantly identify gemstones and explain their meaning. Just take a photo and the app analyzes structure, color, and pattern.';
+  document.getElementById('feature-1').innerText='Accurate AI Recognition';
+  document.getElementById('feature-1-text').innerText='Take a photo and our AI identifies shape, color, pattern, and structure.';
+  document.getElementById('feature-2').innerText='Meaning & Symbolism';
+  document.getElementById('feature-2-text').innerText='Each stone is explained with traditional meaning, background, and interpretation.';
+  document.getElementById('feature-3').innerText='Personal Crystal Profile';
+  document.getElementById('feature-3-text').innerText='Your scans are saved and automatically organized.';
+  document.getElementById('feature-4').innerText='Lexicon Access';
+  document.getElementById('feature-4-text').innerText='Unlock full crystal database to learn all stones in one place.';
+  document.getElementById('feature-note').innerText='Free users can test scanner. Unlock full access, unlimited scans and lexicon with Pro.';
+  document.getElementById('crystals-title').innerText='Crystal Lexicon';
+  document.getElementById('profile-title').innerText='My Crystal Profile';
+  document.querySelector('.cta').style.backgroundColor='var(--accent-en)';
+} else {
+  lang='de';
+  document.getElementById('title').innerText='Kristalle sofort scannen';
+  document.getElementById('subtitle').innerText='COLORGY AI erkennt Edelsteine in Sekunden und erklärt, was sie für dich bedeuten.';
+  document.getElementById('scanbtn').innerText='Gratis Scan starten';
+  document.getElementById('pricing-title').innerText='Vollen Zugriff freischalten';
+  document.getElementById('plan-free').innerText='Gratis';
+  document.getElementById('btn-free').innerText='Starten';
+  document.getElementById('plan-pro').innerText='Pro 3 Monate';
+  document.getElementById('btn-pro').innerText='Pro abonnieren';
+  document.getElementById('plan-premium').innerText='Premium 1 Jahr';
+  document.getElementById('btn-premium').innerText='Premium abonnieren';
+  document.getElementById('identifier-title').innerText='Crystal Identifier — Einfach, Schnell, Informativ';
+  document.getElementById('identifier-intro').innerText='COLORGY AI kombiniert visuelle Erkennung und Kristallwissen, um Edelsteine sofort zu identifizieren und zu erklären. Einfach Foto machen — die App analysiert Struktur, Farbe und Muster und liefert ein klares Ergebnis.';
+  document.getElementById('feature-1').innerText='Präzise KI-Erkennung';
+  document.getElementById('feature-1-text').innerText='Mache ein Foto und unsere KI erkennt Form, Farbe, Muster und Struktur des Kristalls.';
+  document.getElementById('feature-2').innerText='Bedeutung & Symbolik';
+  document.getElementById('feature-2-text').innerText='Jeder Stein wird mit traditioneller Bedeutung, Hintergrund und Interpretation erklärt.';
+  document.getElementById('feature-3').innerText='Persönliches Kristallprofil';
+  document.getElementById('feature-3-text').innerText='Deine Scans werden gespeichert und automatisch organisiert, damit du deine Entdeckungen verfolgen kannst.';
+  document.getElementById('feature-4').innerText='Zugriff auf Lexikon';
+  document.getElementById('feature-4-text').innerText='Vollständige Edelsteindatenbank freischalten, um alle Kristalle an einem Ort zu lernen.';
+  document.getElementById('feature-note').innerText='Gratis Nutzer können Scanner testen. Vollzugriff, unbegrenzte Scans und Lexikon freischalten mit Pro.';
+  document.getElementById('crystals-title').innerText='Crystal Lexikon';
+  document.getElementById('profile-title').innerText='Mein Kristallprofil';
+  document.querySelector('.cta').style.backgroundColor='var(--accent-de)';
 }
 }
 </script>
-
 </body>
 </html>
