@@ -7,18 +7,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --white: #FFF9E8;
+  --bg-light: #fdf9f2;
   --indigo: #0A0E2E;
   --gold: #c9a24d;
-  --pink: #ff79b0;
-  --shadow: 0 12px 38px rgba(0,0,0,.3);
+  --pink: #ff4db8;
+  --shadow: 0 12px 38px rgba(0,0,0,.25);
+  --card-bg: rgba(255,255,255,0.95);
 }
 
 /* Reset */
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:var(--white);color:var(--indigo);line-height:1.6;}
+body{font-family:'Inter',sans-serif;background:var(--bg-light);color:var(--indigo);line-height:1.6;}
 
-/* Background mosaic for entire page */
+/* Fullscreen crystal background mosaic */
 body::before{
   content:"";
   position:fixed;
@@ -39,17 +40,16 @@ body::before{
                     url('images/Quartz-Var-Amethyst-Amethyst.jpg'),
                     url('images/Rosenquarz-Rose-Quartz.jpg'),
                     url('images/Ruby.jpg');
-  background-size: 20% 20%;
-  background-position: repeat;
+  background-size: 25% 25%;
   background-repeat: repeat;
-  opacity: 0.15;
+  opacity:0.12;
   z-index:-1;
 }
 
 /* Header */
 header{
   background:var(--indigo);
-  color:var(--white);
+  color:white;
   padding:16px 32px;
   display:flex;
   justify-content:space-between;
@@ -59,20 +59,22 @@ header{
   z-index:100;
 }
 header h1{
-  font-size:2rem;
+  font-size:1.9rem;
   font-weight:900;
+  color:var(--gold);
 }
 header img{
-  width:100px;
-  height:100px;
+  width:120px;
+  height:120px;
+  object-fit:contain;
 }
 nav a{
   margin-left:24px;
   font-weight:600;
-  font-size:0.9rem;
+  font-size:0.95rem;
   color:white;
 }
-nav a:hover{text-decoration:underline;}
+nav a:hover{color:var(--pink);}
 
 /* Hero */
 .hero{
@@ -80,50 +82,35 @@ nav a:hover{text-decoration:underline;}
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  padding:120px 32px;
+  padding:100px 32px 60px;
   text-align:center;
-  color:white;
   position:relative;
 }
 .hero-content{
   position:relative;
   z-index:1;
-  max-width:700px;
-  background: rgba(10,14,46,0.6);
-  padding: 24px 32px;
-  border-radius: 20px;
+  max-width:750px;
+  background: rgba(255,255,255,0.85);
+  padding: 32px 36px;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
 }
 .hero-content h2{
   font-size:3rem;
   font-weight:900;
-  margin-bottom:24px;
+  margin-bottom:20px;
+  color:var(--indigo);
 }
 .hero-content p{
-  font-size:1.25rem;
+  font-size:1.3rem;
   margin-bottom:36px;
-}
-.btn{
-  padding:18px 36px;
-  border-radius:16px;
-  font-weight:700;
-  color:white;
-  background:var(--pink);
-  border:none;
-  cursor:pointer;
-  margin-right:12px;
-  transition:all .25s;
-  font-size:1rem;
-}
-.btn:hover{background:var(--gold); color:var(--indigo);}
-.btn-outline{
-  background:transparent;
-  color:white;
-  border:2px solid var(--gold);
+  color:var(--indigo);
 }
 .counter{
-  margin:20px 0;
-  font-size:1.8rem;
-  font-weight:700;
+  margin:16px 0;
+  font-size:2rem;
+  font-weight:800;
+  color:var(--pink);
 }
 .counter.highlight{
   color:var(--gold);
@@ -131,7 +118,27 @@ nav a:hover{text-decoration:underline;}
 }
 @keyframes flash{from{opacity:1;}to{opacity:.3;}}
 
-/* Grid */
+.btn{
+  padding:18px 36px;
+  border-radius:20px;
+  font-weight:700;
+  color:white;
+  background:var(--pink);
+  border:none;
+  cursor:pointer;
+  font-size:1.1rem;
+  margin-right:12px;
+  transition:all .3s;
+}
+.btn:hover{background:var(--gold); color:var(--indigo);}
+.btn-outline{
+  background:transparent;
+  color:var(--indigo);
+  border:2px solid var(--gold);
+}
+.btn-outline:hover{color:var(--pink);border-color:var(--pink);}
+
+/* Grid / Cards */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -139,7 +146,7 @@ nav a:hover{text-decoration:underline;}
   padding:40px 32px;
 }
 .card{
-  background:white;
+  background:var(--card-bg);
   color:var(--indigo);
   padding:24px;
   border-radius:20px;
@@ -149,23 +156,24 @@ nav a:hover{text-decoration:underline;}
 }
 .card:hover{transform:translateY(-8px);}
 .card h3{font-size:1.5rem;margin-bottom:12px;}
-.card .price{font-size:1.8rem;font-weight:800;color:var(--gold);margin-bottom:12px;}
+.card .price{font-size:1.7rem;font-weight:800;color:var(--gold);margin-bottom:12px;}
 .card button{
   margin-top:12px;
-  padding:12px 24px;
+  padding:14px 28px;
   font-weight:700;
   border:none;
-  border-radius:12px;
+  border-radius:14px;
   background:var(--pink);
   color:white;
   cursor:pointer;
 }
 .card button:hover{background:var(--gold); color:var(--indigo);}
+.card img{width:100%;border-radius:12px;margin-top:12px;}
 
 /* Overlay */
 .overlay{
   position:fixed;top:0;left:0;width:100%;height:100%;
-  background:rgba(10,14,46,0.9);
+  background:rgba(10,14,46,0.95);
   display:none;
   justify-content:center;align-items:center;
   z-index:200;
@@ -184,15 +192,14 @@ nav a:hover{text-decoration:underline;}
 footer{padding:32px;text-align:center;background:var(--indigo);color:white;}
 footer a{color:var(--pink);}
 
-/* Responsive */
-@media(max-width:800px){.hero h2{font-size:2.2rem;}}
+@media(max-width:800px){.hero-content h2{font-size:2.4rem;}}
 </style>
 </head>
 <body>
 
 <header>
   <h1>COLORGY AI</h1>
-  <img src="images/ai-colorgy-crystal-identifier-app.0.pic.png" alt="Goldener Apfel Diamant">
+  <img src="images/logo.png" alt="COLORGY AI Logo">
   <nav>
     <a href="#home">Home</a>
     <a href="#features">Features</a>
@@ -205,7 +212,7 @@ footer a{color:var(--pink);}
 <section id="home" class="hero">
   <div class="hero-content">
     <h2>Discover & Scan Crystals Instantly</h2>
-    <p>Colorgy AI recognizes crystals, explains their meaning, ai-powered analysis.<br>Educational & spiritual insights clearly labeled.</p>
+    <p>Colorgy AI recognizes crystals, explains their meaning, AI-powered analysis.<br>Educational & spiritual insights clearly labeled.</p>
     <div class="counter" id="scanCounter">Scans today: 0 / 3</div>
     <div class="counter highlight" id="luckyCounter">Lucky 100th Pro: 0 / 100</div>
     <button class="btn" id="freeScanBtn">Start Free Scan</button>
@@ -248,30 +255,29 @@ footer a{color:var(--pink);}
 </section>
 
 <section id="crystals" class="grid">
-  <!-- Crystal Cards with Lexicon Links -->
   <div class="card" onclick="openOverlay('Achat / Agate','https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Achat')">
     <h3>Achat / Agate</h3>
-    <img src="images/Achat-Agate.jpg" alt="Achat" style="width:100%;border-radius:12px;">
+    <img src="images/Achat-Agate.jpg" alt="Achat">
   </div>
   <div class="card" onclick="openOverlay('Bergkristall / Rock Crystal','https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Bergkristall')">
     <h3>Bergkristall / Rock Crystal</h3>
-    <img src="images/Bergkristall-Rock-Crystal.jpg" alt="Bergkristall" style="width:100%;border-radius:12px;">
+    <img src="images/Bergkristall-Rock-Crystal.jpg" alt="Bergkristall">
   </div>
   <div class="card" onclick="openOverlay('Diamant / Diamond','https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Diamant')">
     <h3>Diamant / Diamond</h3>
-    <img src="images/Diamant-Diamond.jpg" alt="Diamant" style="width:100%;border-radius:12px;">
+    <img src="images/Diamant-Diamond.jpg" alt="Diamant">
   </div>
   <div class="card" onclick="openOverlay('Diamantgruppe / Diamond Cluster','https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Diamantgruppe')">
     <h3>Diamantgruppe / Diamond Cluster</h3>
-    <img src="images/Diamantgruppe.jpg" alt="Diamantgruppe" style="width:100%;border-radius:12px;">
+    <img src="images/Diamantgruppe.jpg" alt="Diamantgruppe">
   </div>
   <div class="card" onclick="openOverlay('Edelopal / Opal','https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Edelopal')">
     <h3>Edelopal / Opal</h3>
-    <img src="images/Edelopal-Opal.jpg" alt="Edelopal" style="width:100%;border-radius:12px;">
+    <img src="images/Edelopal-Opal.jpg" alt="Edelopal">
   </div>
   <div class="card" onclick="openOverlay('Eisenmeteorit / Iron Meteorite','https://www.mineralienatlas.de/index.php?action=lexSearch&lex=Eisenmeteorit')">
     <h3>Eisenmeteorit / Iron Meteorite</h3>
-    <img src="images/Eisenmeteorit-feiner-Oktaedrit-4-A-Iron-IVA-iron-iron-group-meteorite.jpg" alt="Eisenmeteorit" style="width:100%;border-radius:12px;">
+    <img src="images/Eisenmeteorit-feiner-Oktaedrit-4-A-Iron-IVA-iron-iron-group-meteorite.jpg" alt="Eisenmeteorit">
   </div>
 </section>
 
