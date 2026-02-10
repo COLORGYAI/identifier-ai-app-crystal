@@ -294,6 +294,19 @@ footer.innerText="2026 © COLORGY AI Educational & spiritual insights clearly la
 }
 }
 </script>
+          <script>
+function toggleLang(){
+const en=document.getElementById('en');
+const de=document.getElementById('de');
+en.classList.toggle('hidden');
+de.classList.toggle('hidden');
+}
+function startTimer(id){
+let t=900;const el=document.getElementById(id);
+setInterval(()=>{let m=Math.floor(t/60),s=t%60;el.textContent=`${m}:${s.toString().padStart(2,'0')} LIMITED OFFER`;if(t>0)t--},1000);
+}
+startTimer('timer');startTimer('timer2');
+</script>
 
 </body>
 </html>
