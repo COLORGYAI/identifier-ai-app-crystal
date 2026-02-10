@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
@@ -136,64 +137,15 @@ footer{text-align:center;margin-top:80px;opacity:.6;padding-bottom:40px}
 <a href="#pricing" id="nav_price">Pricing</a>
 <a href="#crystals" id="nav_crystals">Crystals</a>
 <a href="#profile" id="nav_profile">Profile</a>
-<span class="lang" onclick="toggleLang()">*</span>
+<span class="lang" onclick="toggleLang()">🌐</span>
 </div>
 </nav>
 
 <section id="scan" class="hero">
-  <h1 id="title">Discover & Scan Crystals Instantly</h1>
-  <p id="subtitle">Colorgy AI recognizes crystals, explains their meaning, AI-powered analysis.</p>
-  <button class="cta" id="scanbtn">Start Free Scan</button>
-  <div class="counter" id="counter">0</div>
-  <video id="camera" autoplay playsinline style="display:none;width:100%;max-width:400px;margin-top:20px;border-radius:18px;"></video>
-  <canvas id="snapshot" style="display:none;"></canvas>
-</section>
-<script>
-const scanBtn = document.getElementById('scanbtn');
-const video = document.getElementById('camera');
-const canvas = document.getElementById('snapshot');
-const counterEl = document.getElementById('counter');
-let scans = Number(localStorage.getItem('scans') || 0);
-counterEl.innerText = scans;
-
-scanBtn.addEventListener('click', async () => {
-  // Kamera starten
-  try {
-    const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } });
-    video.srcObject = stream;
-    video.style.display = "block";
-    
-    // Button als "Take Snapshot"
-    scanBtn.innerText = "Take Snapshot";
-    
-    scanBtn.onclick = () => {
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      canvas.getContext('2d').drawImage(video, 0, 0);
-      
-      // Screenshot kann weiterverarbeitet werden
-      const dataURL = canvas.toDataURL("image/png");
-      console.log("Snapshot captured", dataURL);
-      
-      // Counter erhöhen
-      scans++;
-      counterEl.innerText = scans;
-      localStorage.setItem('scans', scans);
-      
-      // Optional: Stream stoppen
-      video.srcObject.getTracks().forEach(track => track.stop());
-      video.style.display = "none";
-      scanBtn.innerText = "Start Free Scan";
-      scanBtn.onclick = null; // Reset für neuen Scan
-    };
-    
-  } catch(err) {
-    alert("Camera not available or permission denied.");
-    console.error(err);
-  }
-});
-</script>
-
+<h1 id="title">Discover & Scan Crystals Instantly</h1>
+<p id="subtitle">Colorgy AI recognizes crystals and explains their meaning using AI analysis.</p>
+<button class="cta" onclick="scan()" id="scanbtn">Start Free Scan</button>
+<a class="buy" href="https://buy.stripe.com/8x28wPevE12JeOYfsB8Vi05" id="free_btn"</a>
 
 <div class="counter" id="counter">0</div><br>
 
