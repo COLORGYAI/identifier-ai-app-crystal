@@ -24,6 +24,31 @@ body{color:var(--text);background:url('images/Achat-Agate.jpg') center/cover fix
 
 .wrap{background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.88));min-height:100vh}
 
+  nav{
+position:relative;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:22px 50px;
+}
+
+/* linke + rechte seite */
+.nav-left a{margin-right:22px;color:#fff;text-decoration:none;opacity:.75}
+.nav-left a:hover{opacity:1}
+
+/* LOGO exakt mittig */
+.logo-center{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+height:46px;
+pointer-events:none;
+user-select:none;
+}
+
+/* rechte seite */
+.nav-right{display:flex;align-items:center}
+
 nav{display:flex;justify-content:space-between;align-items:center;padding:22px 50px}
 .logo{font-weight:800;font-size:26px;letter-spacing:.20em}
 nav a{color:#fff;text-decoration:none;margin-left:24px;opacity:.75}
@@ -74,6 +99,11 @@ footer{text-align:center;margin-top:80px;opacity:.6;padding-bottom:40px}
 <a href="#pricing" id="nav_price">Pricing</a>
 <a href="#crystals" id="nav_crystals">Crystals</a>
 <a href="#profile" id="nav_profile">Profile</a>
+</div>
+
+<img src="images/ai-colorgy-crystal-identifier-app.0.pic.png" class="logo-center">
+
+<div class="nav-right">
 <span class="lang" onclick="toggleLang()">🌐</span>
 </div>
 </nav>
