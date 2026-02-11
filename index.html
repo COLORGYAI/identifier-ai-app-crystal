@@ -1,183 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COLORGY AI</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>COLORGY AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
 
 <style>
 :root{
---pink:#ff2ea6;
---gold:#ffd86b;
---dark:#0b0b0f;
+--accent:#ff2ea6;
+--accentHover:#ffd86b;
+--glass:rgba(255,255,255,.08);
+--text:#fff;
+--font-family:Inter;
 }
 
-*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,Helvetica}
-
-body{
-color:#fff;
-background:url("images/Achat-Agate.jpg") center/cover fixed no-repeat;
+body.de{
+--accent:#39ff14;
+--accentHover:#aaff00;
 }
 
-/* LIGHT OVERLAY (no stripes anymore) */
-.wrap{
-background:rgba(10,10,12,.55);
-min-height:100vh;
-}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter}
+body{color:var(--text);background:url('images/Achat-Agate.jpg') center/cover fixed no-repeat}
 
-/* NAV */
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:22px 50px;
-}
-
-.logo{
-font-weight:800;
-font-size:26px;
-letter-spacing:.25em;
-}
-
-nav a{
-color:#fff;
-text-decoration:none;
-margin-left:22px;
-opacity:.7;
-}
-nav a:hover{opacity:1}
-
-/* HERO */
-.hero{
-text-align:center;
-padding:120px 20px 90px;
-}
-
-.hero h1{
-font-size:64px;
-font-weight:900;
-letter-spacing:-1px;
-}
-
-.hero p{
+.wrap{background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.88));min-height:100vh}
+  .app-description{
 max-width:900px;
-margin:20px auto;
+margin:80px auto;
+padding:0 24px;
+line-height:1.8;
+}
+
+.app-description h2{
+font-size:42px;
+font-weight:800;
+margin-bottom:28px;
+letter-spacing:-0.02em;
+}
+
+.app-description .lead{
 font-size:22px;
+opacity:.9;
+margin-bottom:60px;
+}
+
+.feature{
+margin-bottom:38px;
+}
+
+.feature h3{
+font-size:24px;
+font-weight:700;
+margin-bottom:8px;
+}
+
+.feature p{
+font-size:18px;
+margin-bottom:9px;
 opacity:.85;
 }
 
-/* BUTTON */
-.cta{
-margin-top:40px;
-padding:18px 52px;
-font-size:22px;
-border-radius:18px;
-border:none;
-cursor:pointer;
-background:linear-gradient(90deg,#ff0050,#ff2ea6);
-color:white;
-font-weight:700;
-transition:.25s;
-}
-
-.cta:hover{
-background:linear-gradient(90deg,#ffd86b,#ffb300);
-color:#000;
-transform:scale(1.07);
-}
-
-/* COUNTER */
-.counter{
-font-size:72px;
-font-weight:900;
-margin-top:40px;
-}
-
-/* SECTION */
-.section{
-text-align:center;
-padding:90px 20px;
-}
-
-/* CARDS */
-.cards{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:40px;
+.note{
 margin-top:50px;
+font-size:18px;
+opacity:.8;
 }
 
-.card{
-width:330px;
-padding:40px 30px;
-border-radius:26px;
-background:rgba(20,20,25,.55);
-border:1px solid rgba(255,255,255,.12);
-backdrop-filter:blur(6px);
-transition:.25s;
-}
-
-.card:hover{
-transform:translateY(-6px);
-}
-
-.price{
-font-size:44px;
-font-weight:800;
-margin:18px 0;
-}
-
-.buy{
-display:block;
-margin-top:22px;
-padding:16px;
-border-radius:14px;
-background:linear-gradient(90deg,#ff0050,#ff2ea6);
-color:#fff;
-text-decoration:none;
-font-weight:700;
-}
-
-.buy:hover{
-background:linear-gradient(90deg,#ffd86b,#ffb300);
-color:#000;
-}
-
-/* CRYSTALS GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-gap:26px;
-margin-top:60px;
-padding:0 40px;
-}
-
-.crystal{
-border-radius:18px;
-overflow:hidden;
-transition:.25s;
-background:rgba(0,0,0,.35);
-}
-
-.crystal img{
-width:100%;
-display:block;
-}
-
-.crystal:hover{
-transform:scale(1.06);
-}
-
-/* FOOTER */
-footer{
-text-align:center;
+.why{
 margin-top:90px;
-opacity:.6;
-padding-bottom:40px;
 }
+
+.reasons{
+margin-top:30px;
+font-size:20px;
+line-height:2.1;
+padding-left:20px;
+}
+
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 50px}
+.logo{font-weight:800;font-size:26px;letter-spacing:.20em}
+nav a{color:#fff;text-decoration:none;margin-left:24px;opacity:.75}
+nav a:hover{opacity:1}
+.lang{margin-left:30px;border:1px solid #fff3;padding:6px 12px;border-radius:20px;cursor:pointer}
+
+.hero{text-align:center;padding:120px 20px}
+.hero h1{font-size:60px;font-weight:900}
+.hero p{max-width:920px;margin:18px auto;font-size:25px;opacity:.85}
+
+.cta{margin-top:40px;padding:18px 48px;font-size:22px;border:none;border-radius:16px;background:var(--accent);color:#fff;font-weight:700;cursor:pointer;transition:.25s}
+.cta:hover{background:var(--accentHover);color:#000;transform:scale(1.07)}
+
+.counter{font-size:70px;font-weight:800;margin-top:40px}
+  
+
+.section{text-align:center;padding:90px 20px}
+.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:50px}
+
+.card{width:330px;background:var(--glass);padding:40px 28px;border-radius:26px;backdrop-filter:blur(12px);position:relative}
+
+.badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accentHover);color:#000;padding:6px 16px;border-radius:30px;font-size:13px;font-weight:700}
+
+.price{font-size:44px;font-weight:800;margin:18px 0}
+
+.buy{display:block;margin-top:20px;padding:16px;border-radius:14px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+.buy:hover{background:var(--accentHover);color:#000}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:22px;margin-top:50px;padding:0 40px}
+
+.crystal{background:var(--glass);padding:12px;border-radius:18px;cursor:pointer;transition:.2s}
+.crystal img{width:100%;border-radius:12px}
+.crystal:hover{transform:scale(1.06)}
+.locked{opacity:.25;pointer-events:none}
+
+.profile{max-width:600px;margin:40px auto;background:var(--glass);padding:28px;border-radius:22px}
+
+footer{text-align:center;margin-top:80px;opacity:.6;padding-bottom:40px}
 </style>
 </head>
 
@@ -187,75 +133,165 @@ padding-bottom:40px;
 <nav>
 <div class="logo">COLORGY AI</div>
 <div>
-<a href="#home">Home</a>
-<a href="#pricing">Pricing</a>
-<a href="#crystals">Crystals</a>
+<a href="#scan" id="nav_home">Home</a>
+<a href="#pricing" id="nav_price">Pricing</a>
+<a href="#crystals" id="nav_crystals">Crystals</a>
+<a href="#profile" id="nav_profile">Profile</a>
+<span class="lang" onclick="toggleLang()">🌐</span>
 </div>
 </nav>
 
-<section id="home" class="hero">
-<h1>Discover & Scan Crystals Instantly</h1>
-<p>AI identifies gemstones and explains meaning, symbolism and usage.</p>
-<button class="cta" onclick="scan()">Start Free Scan</button>
-<div class="counter" id="counter">0</div>
-</section>
+<section id="scan" class="hero">
+<h1 id="title">Discover & Scan Crystals Instantly</h1>
+<p id="subtitle">Colorgy AI recognizes crystals and explains their meaning using AI analysis.</p>
+<button class="cta" onclick="scan()" id="scanbtn">Start Free Scan</button>
+<a class="buy" href="https://buy.stripe.com/8x28wPevE12JeOYfsB8Vi05" id="free_btn"</a>
+
+<div class="counter" id="counter">0</div><br>
+
+<section class="info-section">
+  <div class="container">
+    
+      <div class="feature">
+      <h3>Understand crystals — not just their name</h3>
+        <div>COLORGY AI identifies gemstones in seconds and explains what they actually mean for you</div>
+      </div>
+
+      <div class="feature">
+      <h3>Instant recognition</h3>
+        <div>Take a photo and the AI analyzes structure, color and type.</div>
+      </div>
+
+      <div class="feature">
+      <h3>Meaning & symbolism</h3>
+        <div>Receive energetic, emotional and psychological associations clearly explained.</div>
+      </div>
+
+      <div class="feature">
+      <h3>Usage guidance</h3>
+        <div>Suggestions for focus, calm, creativity or protection.</div>
+      </div>
+
+      <div class="feature">
+      <h3>Personal crystal profile</h3>
+        <div>Your scans are saved and organized automatically.</div>
+      </div>
+
+      <div class="feature">
+      <h3>Free users can try the scanner. </h3><br>
+        <div>Full lexicon, unlimited scans and tracking unlock with Pro.</div>
 
 <section id="pricing" class="section">
-<h2>Unlock Full Access</h2>
+<h2 id="unlock">Unlock Full Access</h2>
 <div class="cards">
 
 <div class="card">
-<h3>Free</h3>
+<h3 id="free_title">Free</h3>
 <div class="price">$0</div>
-<p>Try scanner</p>
-<a class="buy" href="#">Start</a>
+<p id="free_desc">3 scan per day/7 day trial</p>
+<a class="buy" href="https://buy.stripe.com/8x28wPevE12JeOYfsB8Vi05" id="free_btn">Start</a>
 </div>
 
 <div class="card">
+<div class="badge" id="rec">Recommended</div>
 <h3>Pro</h3>
 <div class="price">$6.99</div>
-<p>Unlimited scans + lexicon</p>
-<a class="buy" href="#">Upgrade</a>
+<p id="pro_desc">1 month Full identification & lexicon</p>
+<a class="buy" onclick="unlockPro()" href="https://buy.stripe.com/3cI00j9bk7r75eoeox8Vi06" id="pro_btn">Upgrade</a>
 </div>
 
 <div class="card">
 <h3>Premium</h3>
 <div class="price">$39.99</div>
-<p>Full year access</p>
-<a class="buy" href="#">Go Premium</a>
+<p id="premium_desc">1 year unlimited access</p>
+<a class="buy" onclick="unlockPro()" href="https://buy.stripe.com/7sYdR9cnwfXD7mw8098Vi04" id="premium_btn">Go Premium</a>
 </div>
-
-</div>
-</section>
 
 <section id="crystals" class="section">
-<h2>Crystal Lexicon</h2>
-
-<div class="grid">
-<div class="crystal"><img src="images/Achat-Agate.jpg"></div>
-<div class="crystal"><img src="images/Bergkristall-Rock-Crystal.jpg"></div>
-<div class="crystal"><img src="images/Diamant-Diamond.jpg"></div>
-<div class="crystal"><img src="images/Edelopal-Opal.jpg"></div>
-<div class="crystal"><img src="images/Rosenquarz-Rose-Quartz.jpg"></div>
-<div class="crystal"><img src="images/Ruby.jpg"></div>
+<h2 id="lexicon_title">Crystal Lexicon</h2>
+<div class="grid" id="lexicon">
+<div class="crystal locked"><img src="images/Achat-Agate.jpg"><p>Agate</p></div>
+<div class="crystal locked"><img src="images/Bergkristall-Rock-Crystal.jpg"><p>Rock Crystal</p></div>
+<div class="crystal locked"><img src="images/Diamant-Diamond.jpg"><p>Diamond</p></div>
+<div class="crystal locked"><img src="images/Edelopal-Opal.jpg"><p>Black Opal</p></div>
+<div class="crystal locked"><img src="images/Rosenquarz-Rose-Quartz.jpg"><p>Rose Quarz</p></div>
+<div class="crystal locked"><img src="images/Ruby.jpg"><p>Ruby</p></div>
 </div>
-
 </section>
-
-<footer>© 2026 COLORGY AI</footer>
-
+         
+<section id="profile" class="section">
+<h2 id="profile_title">My Crystal Profile</h2>
+<div class="profile"><div id="saved">No scans yet</div></div>
+</section> 
+  </div>
+<div><h3 class="small-note">
+        Why people use Colorgy AI</h3></div>
+      <div class="feature">
+        Collectors verify stones | Spiritual users understand meanings<br>Designers choose colors intentionally | Learn faster than searching forums</div>
+        
+<footer id="footer">2026 © COLORGY AI Educational & spiritual insights clearly labeled.</footer>
 </div>
 
 <script>
-let scans=Number(localStorage.getItem("scans")||0);
-document.getElementById("counter").innerText=scans;
+let scans=Number(localStorage.getItem('scans')||0);
+document.getElementById('counter').innerText=scans;
 
 function scan(){
 scans++;
-document.getElementById("counter").innerText=scans;
-localStorage.setItem("scans",scans);
+document.getElementById('counter').innerText=scans;
+localStorage.setItem('scans',scans);
+}
+
+function unlockPro(){
+localStorage.setItem('pro','1');
+document.querySelectorAll('.crystal').forEach(e=>e.classList.remove('locked'));
+}
+
+if(localStorage.getItem('pro')==='1'){
+document.querySelectorAll('.crystal').forEach(e=>e.classList.remove('locked'));
+}
+
+/* LANGUAGE SWITCH */
+let lang='en';
+function toggleLang(){
+lang=lang==='en'?'de':'en';
+document.body.classList.toggle('de');
+
+if(lang==='de'){
+title.innerText="Kristalle sofort scannen";
+subtitle.innerText="Colorgy AI erkennt Kristalle und erklärt ihre Bedeutung mit KI.";
+scanbtn.innerText="Gratis Scan starten";
+unlock.innerText="Vollen Zugriff freischalten";
+free_desc.innerText="3 Scans pro Tag";
+pro_desc.innerText="1 Monat vollständige Identifikation & Lexikon";
+premium_desc.innerText="1 Jahr unbegrenzt";
+profile_title.innerText="Mein Kristall Profil";
+lexicon_title.innerText="Edelstein Lexikon";
+rec.innerText="Empfohlen";
+nav_home.innerText="Start";
+nav_price.innerText="Preise";
+nav_crystals.innerText="Steine";
+nav_profile.innerText="Profil";
+footer.innerText="2026 © COLORGY AI Bildungs- & spirituelle Hinweise gekennzeichnet";
+}
+else{
+title.innerText="Discover & Scan Crystals Instantly";
+subtitle.innerText="Colorgy AI recognizes crystals and explains their meaning using AI analysis.";
+scanbtn.innerText="Start Free Scan";
+unlock.innerText="Unlock Full Access";
+free_desc.innerText="3 scans per day";
+pro_desc.innerText="1 month Full identification & lexicon";
+premium_desc.innerText="1 year unlimited access";
+profile_title.innerText="My Crystal Profile";
+lexicon_title.innerText="Crystal Lexicon";
+rec.innerText="Recommended";
+nav_home.innerText="Home";
+nav_price.innerText="Pricing";
+nav_crystals.innerText="Crystals";
+nav_profile.innerText="Profile";
+footer.innerText="2026 © COLORGY AI Educational & spiritual insights clearly labeled.";
+}
 }
 </script>
-
 </body>
 </html>
