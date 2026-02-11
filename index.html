@@ -3,28 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COLORGY AI — Crystal Identifier</title>
+<title>COLORGY AI</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
---accent:#ff0050;
---accent2:#00f2ea;
+--pink:#ff2ea6;
 --gold:#ffd86b;
---glass:rgba(255,255,255,.08);
---text:#ffffff;
+--dark:#0b0b0f;
 }
 
-*{box-sizing:border-box;margin:0;padding:0;font-family:Inter}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,Helvetica}
 
 body{
-color:var(--text);
-background:url('images/Achat-Agate.jpg') center/cover fixed no-repeat;
+color:#fff;
+background:url("images/Achat-Agate.jpg") center/cover fixed no-repeat;
 }
 
-.overlay{
-background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.95));
+/* LIGHT OVERLAY (no stripes anymore) */
+.wrap{
+background:rgba(10,10,12,.55);
 min-height:100vh;
 }
 
@@ -34,282 +33,227 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:22px 50px;
-backdrop-filter:blur(12px);
 }
 
 .logo{
-font-weight:900;
-letter-spacing:.22em;
-font-size:18px;
-opacity:.95;
+font-weight:800;
+font-size:26px;
+letter-spacing:.25em;
 }
 
 nav a{
 color:#fff;
 text-decoration:none;
-margin-left:26px;
+margin-left:22px;
 opacity:.7;
-font-size:14px;
 }
 nav a:hover{opacity:1}
 
 /* HERO */
 .hero{
 text-align:center;
-padding:110px 20px 60px;
-max-width:1000px;
-margin:auto;
+padding:120px 20px 90px;
 }
 
 .hero h1{
 font-size:64px;
 font-weight:900;
-line-height:1.05;
-background:linear-gradient(90deg,var(--accent),var(--accent2));
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+letter-spacing:-1px;
 }
 
 .hero p{
-margin-top:22px;
+max-width:900px;
+margin:20px auto;
 font-size:22px;
-opacity:.88;
-line-height:1.5;
+opacity:.85;
 }
 
+/* BUTTON */
 .cta{
-margin-top:38px;
-padding:18px 56px;
-font-size:20px;
-font-weight:800;
+margin-top:40px;
+padding:18px 52px;
+font-size:22px;
 border-radius:18px;
 border:none;
-background:var(--accent);
-color:white;
 cursor:pointer;
+background:linear-gradient(90deg,#ff0050,#ff2ea6);
+color:white;
+font-weight:700;
 transition:.25s;
 }
+
 .cta:hover{
-background:var(--gold);
-color:black;
-transform:scale(1.05);
+background:linear-gradient(90deg,#ffd86b,#ffb300);
+color:#000;
+transform:scale(1.07);
 }
 
-/* CAMERA */
-video{
-margin-top:30px;
-width:100%;
-max-width:420px;
-border-radius:22px;
-background:black;
+/* COUNTER */
+.counter{
+font-size:72px;
+font-weight:900;
+margin-top:40px;
 }
 
-.scanResult{
-margin:28px auto;
-max-width:700px;
-padding:24px;
-background:var(--glass);
-border-radius:22px;
-font-size:18px;
-line-height:1.6;
-}
-
-/* WHY */
+/* SECTION */
 .section{
-padding:100px 20px;
 text-align:center;
+padding:90px 20px;
 }
 
-.section h2{
-font-size:40px;
-margin-bottom:18px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:30px;
-max-width:1000px;
-margin:50px auto 0;
-}
-
-.box{
-padding:30px;
-border-radius:24px;
-background:var(--glass);
-font-size:18px;
-line-height:1.5;
-}
-
-/* PRICING */
+/* CARDS */
 .cards{
 display:flex;
 flex-wrap:wrap;
-gap:40px;
 justify-content:center;
-margin-top:60px;
+gap:40px;
+margin-top:50px;
 }
 
 .card{
-width:320px;
-padding:40px;
-border-radius:28px;
-background:var(--glass);
+width:330px;
+padding:40px 30px;
+border-radius:26px;
+background:rgba(20,20,25,.55);
+border:1px solid rgba(255,255,255,.12);
+backdrop-filter:blur(6px);
+transition:.25s;
 }
 
-.card h3{font-size:22px}
+.card:hover{
+transform:translateY(-6px);
+}
+
 .price{
-font-size:48px;
-font-weight:900;
+font-size:44px;
+font-weight:800;
 margin:18px 0;
 }
 
 .buy{
 display:block;
-margin-top:24px;
+margin-top:22px;
 padding:16px;
 border-radius:14px;
-background:var(--accent);
-color:white;
+background:linear-gradient(90deg,#ff0050,#ff2ea6);
+color:#fff;
 text-decoration:none;
 font-weight:700;
 }
-.buy:hover{background:var(--gold);color:black}
 
-/* LEXICON */
-.lexicon{
+.buy:hover{
+background:linear-gradient(90deg,#ffd86b,#ffb300);
+color:#000;
+}
+
+/* CRYSTALS GRID */
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:20px;
-max-width:1000px;
-margin:50px auto 0;
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:26px;
+margin-top:60px;
+padding:0 40px;
 }
 
 .crystal{
-background:var(--glass);
-padding:10px;
 border-radius:18px;
+overflow:hidden;
+transition:.25s;
+background:rgba(0,0,0,.35);
 }
-.crystal img{width:100%;border-radius:12px}
 
+.crystal img{
+width:100%;
+display:block;
+}
+
+.crystal:hover{
+transform:scale(1.06);
+}
+
+/* FOOTER */
 footer{
 text-align:center;
-padding:70px 0;
+margin-top:90px;
 opacity:.6;
-font-size:14px;
+padding-bottom:40px;
 }
 </style>
 </head>
-<body>
 
-<div class="overlay">
+<body>
+<div class="wrap">
 
 <nav>
 <div class="logo">COLORGY AI</div>
 <div>
-<a href="#scan">Scan</a>
-<a href="#why">Why</a>
+<a href="#home">Home</a>
 <a href="#pricing">Pricing</a>
-<a href="#lexicon">Lexicon</a>
+<a href="#crystals">Crystals</a>
 </div>
 </nav>
 
-<section id="scan" class="hero">
-<h1>Know your crystal instantly</h1>
-<p>Identify gemstones and understand their meaning, symbolism and emotional impact in seconds using AI.</p>
-
-<button class="cta" onclick="startCamera()">Start Free Scan</button>
-
-<video id="camera" autoplay playsinline muted></video>
-<canvas id="canvas" style="display:none;"></canvas>
-
-<div class="scanResult" id="result">
-Point the camera at a crystal and press scan
-</div>
-
-<button class="cta" onclick="scanCrystal()">Analyze</button>
-</section>
-
-<section id="why" class="section">
-<h2>Why Colorgy</h2>
-<div class="grid">
-<div class="box">Verify if a stone is real or synthetic</div>
-<div class="box">Understand emotional and symbolic meaning</div>
-<div class="box">Choose crystals intentionally</div>
-<div class="box">Learn faster than searching forums</div>
-</div>
+<section id="home" class="hero">
+<h1>Discover & Scan Crystals Instantly</h1>
+<p>AI identifies gemstones and explains meaning, symbolism and usage.</p>
+<button class="cta" onclick="scan()">Start Free Scan</button>
+<div class="counter" id="counter">0</div>
 </section>
 
 <section id="pricing" class="section">
-<h2>Unlock full understanding</h2>
-
+<h2>Unlock Full Access</h2>
 <div class="cards">
 
 <div class="card">
 <h3>Free</h3>
 <div class="price">$0</div>
-<p>Preview identification</p>
-<a class="buy" href="https://buy.stripe.com/8x28wPevE12JeOYfsB8Vi05">Start</a>
+<p>Try scanner</p>
+<a class="buy" href="#">Start</a>
 </div>
 
 <div class="card">
 <h3>Pro</h3>
 <div class="price">$6.99</div>
-<p>Unlimited scans<br>Full meanings & chakra</p>
-<a class="buy" href="https://buy.stripe.com/cNi5kDcnw3aR6is3JT8Vi03">Upgrade</a>
+<p>Unlimited scans + lexicon</p>
+<a class="buy" href="#">Upgrade</a>
 </div>
 
 <div class="card">
 <h3>Premium</h3>
-<div class="price">$49.90</div>
-<p>Best yearly value</p>
-<a class="buy" href="https://buy.stripe.com/7sYdR9cnwfXD7mw8098Vi04">Go Premium</a>
+<div class="price">$39.99</div>
+<p>Full year access</p>
+<a class="buy" href="#">Go Premium</a>
 </div>
 
 </div>
 </section>
 
-<section id="lexicon" class="section">
+<section id="crystals" class="section">
 <h2>Crystal Lexicon</h2>
-<div class="lexicon">
-<div class="crystal"><img src="images/Achat-Agate.jpg"><p>Achat</p></div>
-<div class="crystal"><img src="images/Bergkristall-Rock-Crystal.jpg"><p>Bergkristall</p></div>
-<div class="crystal"><img src="images/Diamant-Diamond.jpg"><p>Diamant</p></div>
-<div class="crystal"><img src="images/Edelopal-Opal.jpg"><p>Opal</p></div>
-<div class="crystal"><img src="images/Rosenquarz-Rose-Quartz.jpg"><p>Rosenquarz</p></div>
+
+<div class="grid">
+<div class="crystal"><img src="images/Achat-Agate.jpg"></div>
+<div class="crystal"><img src="images/Bergkristall-Rock-Crystal.jpg"></div>
+<div class="crystal"><img src="images/Diamant-Diamond.jpg"></div>
+<div class="crystal"><img src="images/Edelopal-Opal.jpg"></div>
+<div class="crystal"><img src="images/Rosenquarz-Rose-Quartz.jpg"></div>
+<div class="crystal"><img src="images/Ruby.jpg"></div>
 </div>
+
 </section>
 
-<footer>
-Educational & symbolic information — not medical advice
-</footer>
+<footer>© 2026 COLORGY AI</footer>
 
 </div>
 
 <script>
-let stream;
+let scans=Number(localStorage.getItem("scans")||0);
+document.getElementById("counter").innerText=scans;
 
-async function startCamera(){
-stream = await navigator.mediaDevices.getUserMedia({video:{facingMode:"environment"},audio:false});
-camera.srcObject = stream;
-}
-
-async function scanCrystal(){
-const ctx = canvas.getContext("2d");
-canvas.width = camera.videoWidth;
-canvas.height = camera.videoHeight;
-ctx.drawImage(camera,0,0);
-
-result.innerText="Analyzing...";
-
-const res = await fetch("/.netlify/functions/scan",{
-method:"POST",
-headers:{"Content-Type":"application/json"},
-body:JSON.stringify({image:canvas.toDataURL("image/jpeg",0.85)})
-});
-
-const data = await res.json();
-result.innerText=data.result || "No identification";
+function scan(){
+scans++;
+document.getElementById("counter").innerText=scans;
+localStorage.setItem("scans",scans);
 }
 </script>
 
