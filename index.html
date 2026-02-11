@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en"> 
 <head>
 <meta charset="UTF-8" />
@@ -13,13 +13,12 @@ if ("serviceWorker" in navigator) {
 }
 </script>
 
-<style>
 :root{
 --accent:#ff2ea6;
 --accentHover:#ffd86b;
 --glass:rgba(255,255,255,.08);
---text:#fff;
---font-family:Inter;
+--card:rgba(20,20,28,.55);
+--text:#ffffff;
 }
 
 body.de{
@@ -27,103 +26,201 @@ body.de{
 --accentHover:#aaff00;
 }
 
-*{box-sizing:border-box;margin:0;padding:0;font-family:Inter}
-body{color:var(--text);background:url('images/Achat-Agate.jpg') center/cover fixed no-repeat}
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:Inter,Helvetica,Arial;
+}
 
-.wrap{background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.88));min-height:100vh}
-  .app-description{
+body{
+color:var(--text);
+background:url('images/Achat-Agate.jpg') center/cover fixed no-repeat;
+}
+
+/* SOFT OVERLAY (kein Farbstich mehr) */
+.wrap{
+background:rgba(10,10,14,.55);
+backdrop-filter:blur(2px);
+min-height:100vh;
+}
+
+/* NAV */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:22px 50px;
+}
+
+.logo{
+font-weight:900;
+font-size:26px;
+letter-spacing:.25em;
+}
+
+nav a{
+color:#fff;
+text-decoration:none;
+margin-left:22px;
+opacity:.7;
+}
+nav a:hover{opacity:1}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:120px 20px 90px;
+}
+
+.hero h1{
+font-size:62px;
+font-weight:900;
+letter-spacing:-.02em;
+}
+
+.hero p{
 max-width:900px;
-margin:80px auto;
-padding:0 24px;
-line-height:1.8;
-}
-
-.app-description h2{
-font-size:42px;
-font-weight:800;
-margin-bottom:28px;
-letter-spacing:-0.02em;
-}
-
-.app-description .lead{
+margin:20px auto;
 font-size:22px;
-opacity:.9;
-margin-bottom:60px;
-}
-
-.feature{
-margin-bottom:38px;
-}
-
-.feature h3{
-font-size:24px;
-font-weight:700;
-margin-bottom:8px;
-}
-
-.feature p{
-font-size:18px;
-margin-bottom:9px;
 opacity:.85;
 }
 
-.note{
+/* BUTTON — Farbe nur hier */
+.cta{
+margin-top:40px;
+padding:18px 52px;
+font-size:22px;
+border-radius:18px;
+border:none;
+cursor:pointer;
+background:var(--accent);
+color:white;
+font-weight:700;
+transition:.25s;
+}
+
+.cta:hover{
+background:var(--accentHover);
+color:#000;
+transform:scale(1.05);
+}
+
+/* COUNTER */
+.counter{
+font-size:72px;
+font-weight:900;
+margin-top:40px;
+}
+
+/* SECTIONS */
+.section{
+text-align:center;
+padding:90px 20px;
+}
+
+/* CARDS — kein pink mehr */
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
 margin-top:50px;
-font-size:18px;
-opacity:.8;
 }
 
-.why{
+.card{
+width:330px;
+padding:40px 30px;
+border-radius:26px;
+background:var(--card);
+border:1px solid rgba(255,255,255,.12);
+backdrop-filter:blur(8px);
+transition:.25s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:rgba(255,255,255,.25);
+}
+
+.badge{
+position:absolute;
+top:-14px;
+left:50%;
+transform:translateX(-50%);
+background:var(--accent);
+color:#fff;
+padding:6px 16px;
+border-radius:30px;
+font-size:13px;
+font-weight:700;
+}
+
+.price{
+font-size:44px;
+font-weight:800;
+margin:18px 0;
+}
+
+/* BUY BUTTON */
+.buy{
+display:block;
+margin-top:22px;
+padding:16px;
+border-radius:14px;
+background:var(--accent);
+color:#fff;
+text-decoration:none;
+font-weight:700;
+}
+
+.buy:hover{
+background:var(--accentHover);
+color:#000;
+}
+
+/* CRYSTALS */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:26px;
+margin-top:60px;
+padding:0 40px;
+}
+
+.crystal{
+border-radius:18px;
+overflow:hidden;
+background:rgba(0,0,0,.35);
+transition:.25s;
+}
+
+.crystal img{
+width:100%;
+display:block;
+}
+
+.crystal:hover{
+transform:scale(1.05);
+}
+
+/* PROFILE */
+.profile{
+max-width:600px;
+margin:40px auto;
+background:var(--card);
+padding:28px;
+border-radius:22px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
 margin-top:90px;
+opacity:.6;
+padding-bottom:40px;
 }
 
-.reasons{
-margin-top:30px;
-font-size:20px;
-line-height:2.1;
-padding-left:20px;
-}
-
-
-nav{display:flex;justify-content:space-between;align-items:center;padding:22px 50px}
-.logo{font-weight:800;font-size:26px;letter-spacing:.20em}
-nav a{color:#fff;text-decoration:none;margin-left:24px;opacity:.75}
-nav a:hover{opacity:1}
-.lang{margin-left:30px;border:1px solid #fff3;padding:6px 12px;border-radius:20px;cursor:pointer}
-
-.hero{text-align:center;padding:120px 20px}
-.hero h1{font-size:60px;font-weight:900}
-.hero p{max-width:920px;margin:18px auto;font-size:25px;opacity:.85}
-
-.cta{margin-top:40px;padding:18px 48px;font-size:22px;border:none;border-radius:16px;background:var(--accent);color:#fff;font-weight:700;cursor:pointer;transition:.25s}
-.cta:hover{background:var(--accentHover);color:#000;transform:scale(1.07)}
-
-.counter{font-size:70px;font-weight:800;margin-top:40px}
-  
-
-.section{text-align:center;padding:90px 20px}
-.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:50px}
-
-.card{width:330px;background:var(--glass);padding:40px 28px;border-radius:26px;backdrop-filter:blur(12px);position:relative}
-
-.badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accentHover);color:#000;padding:6px 16px;border-radius:30px;font-size:13px;font-weight:700}
-
-.price{font-size:44px;font-weight:800;margin:18px 0}
-
-.buy{display:block;margin-top:20px;padding:16px;border-radius:14px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
-.buy:hover{background:var(--accentHover);color:#000}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:22px;margin-top:50px;padding:0 40px}
-
-.crystal{background:var(--glass);padding:12px;border-radius:18px;cursor:pointer;transition:.2s}
-.crystal img{width:100%;border-radius:12px}
-.crystal:hover{transform:scale(1.06)}
-.locked{opacity:.25;pointer-events:none}
-
-.profile{max-width:600px;margin:40px auto;background:var(--glass);padding:28px;border-radius:22px}
-
-footer{text-align:center;margin-top:80px;opacity:.6;padding-bottom:40px}
-</style>
 </head>
 
 <body>
