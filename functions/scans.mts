@@ -2,25 +2,25 @@ import type { Context } from "@netlify/functions";
 
 export default async (req: Request, context: Context) => {
   try {
+
     const { image } = await req.json();
+
+    const apiKey = Netlify.env.get("OPEN_AI_API_KEY");
 
     const openai = await fetch("https://api.openai.com/v1/responses", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${Netlify.env.get("OPENAI_API_KEY")}`
+        "Authorization": `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: "gpt-4.1-mini",
+        model: "gpt-5-nano",
         input: [
           {
             role: "user",
             content: [
-              { type: "input_text", text: "Identify this crystal and explain meaning, energy, psychological association and practical use in simple clear language." },
-              {
-                type: "input_image",
-                image_base64: image
-              }
+              { type: "input_text", text: "Identify this crystal and explain meaning shortly." },
+              { type: "input_image", image_url: image }
             ]
           }
         ]
@@ -29,11 +29,11 @@ export default async (req: Request, context: Context) => {
 
     const data = await openai.json();
 
-    return new Response(JSON.stringify({
-      result: data.output[0].content[0].text
-    }), { headers: { "Content-Type": "application/json" } });
+    return new Response(JSON.stringify(data), {
+      headers: { "Content-Type": "application/json" }
+    });
 
-  } catch (e) {
-    return new Response(JSON.stringify({ error: "scan failed" }), { status: 500 });
+  } catch (err) {
+    return new Response(JSON.stringify({ error: "Scan failed" }), { status: 500 });
   }
 };
